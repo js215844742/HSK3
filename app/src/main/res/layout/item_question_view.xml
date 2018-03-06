@@ -1,0 +1,23 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:id="@+id/tv_pinyin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:gravity="center"
+        android:text="miànbāo"
+        android:textSize="@dimen/sp_14"
+        android:layout_marginRight="@dimen/dp_10"/>
+    <TextView
+        android:id="@+id/tv_hanzi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:gravity="center"
+        android:text="面包"
+        android:textSize="@dimen/sp_18"
+        android:layout_marginRight="@dimen/dp_10"/>
+</LinearLayout>

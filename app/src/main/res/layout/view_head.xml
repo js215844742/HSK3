@@ -1,0 +1,18 @@
+<android.support.v7.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_70"
+    android:paddingTop="@dimen/dp_20"
+    android:background="@color/colorPrimary"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:text="标题"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/white"/>
+</android.support.v7.widget.Toolbar>
