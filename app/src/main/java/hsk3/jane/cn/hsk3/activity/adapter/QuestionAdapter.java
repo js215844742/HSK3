@@ -36,7 +36,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         QuestionBean item = arrayList.get(position);
-        holder.numberTv.setText(position+1+"");
+        holder.numberTv.setText(position+1+".");
         for (int i = 0; i < item.getPinyin().length; i++) {
             View view = LayoutInflater.from(context).inflate(R.layout.item_question_view, null);
             ((TextView) view.findViewById(R.id.tv_pinyin)).setText(item.getPinyin()[i]);

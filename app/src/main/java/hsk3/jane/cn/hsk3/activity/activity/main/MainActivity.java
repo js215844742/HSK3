@@ -1,4 +1,4 @@
-package hsk3.jane.cn.hsk3.activity.activity;
+package hsk3.jane.cn.hsk3.activity.activity.main;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
