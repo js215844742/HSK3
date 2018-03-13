@@ -25,6 +25,7 @@ public class WelcomeActivity extends BaseActivity{
         @Override
         public void run() {
             AndroidUtils.startActivity(WelcomeActivity.this,FixNameActivity.class,true);
+            finish();
         }
     };
 }

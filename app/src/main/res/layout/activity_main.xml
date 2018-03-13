@@ -1,11 +1,25 @@
-<LinearLayout android:layout_width="match_parent"
+<RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <include layout="@layout/view_head" />
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/view_bottom">
     </android.support.v4.view.ViewPager>
-</LinearLayout>
+    <!--<include
+        android:id="@+id/view_bottom"
+        layout="@layout/view_bottom"/>-->
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/view_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/background"
+        app:menu="@menu/menu_bottom_navigation"
+        app:itemBackground="@drawable/item_selected_bottom" />
+</RelativeLayout>

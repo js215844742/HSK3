@@ -16,12 +16,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/res/anim'] } }
+    sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/res/anim', 'src/main/res/menu'] } }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.0'
+    compile'com.android.support:design:27.1.0'
     implementation 'com.android.support:recyclerview-v7:27.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
@@ -29,4 +30,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile 'com.github.bumptech.glide:glide:3.7.0'
 
+}
+
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
 }
