@@ -11,15 +11,15 @@
         android:layout_below="@+id/toolbar"
         android:layout_above="@+id/view_bottom">
     </android.support.v4.view.ViewPager>
-    <!--<include
+    <include
         android:id="@+id/view_bottom"
-        layout="@layout/view_bottom"/>-->
-    <android.support.design.widget.BottomNavigationView
+        layout="@layout/view_bottom"/>
+    <!--<android.support.design.widget.BottomNavigationView
         android:id="@+id/view_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/background"
         app:menu="@menu/menu_bottom_navigation"
-        app:itemBackground="@drawable/item_selected_bottom" />
+        app:itemBackground="@drawable/item_selected_bottom" />-->
 </RelativeLayout>

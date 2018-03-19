@@ -7,7 +7,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
-        android:id="@+id/homework"
+        android:id="@+id/home"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:onClick="onTabClicked"
