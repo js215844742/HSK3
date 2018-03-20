@@ -1,31 +1,26 @@
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    >
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@mipmap/bg_welcome"
-        android:scaleType="fitXY"/>
+    android:background="@color/background">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:orientation="vertical"
         android:gravity="end"
-        android:layout_margin="@dimen/dp_30"
+        android:layout_margin="@dimen/dp_50"
         android:layout_alignParentBottom="true">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/sp_16"
-            android:textColor="@color/white"
-            android:text="全世界都在学中国话，孔夫子的话，越来越国际化。"/>
+            android:textColor="@color/gray"
+            android:text="      全世界都在学中国话，孔夫子的话，越来越国际化。"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/sp_16"
-            android:textColor="@color/white"
+            android:textColor="@color/gray"
             android:text="——《中国话》"/>
     </LinearLayout>
 

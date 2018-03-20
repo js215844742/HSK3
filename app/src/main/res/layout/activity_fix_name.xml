@@ -1,6 +1,6 @@
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/bg_welcome"
+    android:background="@color/background"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <ImageView
         android:id="@+id/img_head"
@@ -59,18 +59,19 @@
             android:layout_centerHorizontal="true"
             android:text="Jane，欢迎回来。"
             android:visibility="visible"
-            android:textColor="@color/white"
+            android:textColor="@color/gray"
             android:textSize="@dimen/sp_16"
             android:layout_marginTop="@dimen/dp_80"/>
     </RelativeLayout>
     <Button
         android:id="@+id/btn_begin"
-        android:layout_width="@dimen/dp_150"
-        android:layout_height="@dimen/dp_40"
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="@dimen/dp_45"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/view"
         android:text="开始练习"
-        android:textColor="@color/green"
+        android:textSize="@dimen/sp_18"
+        android:textColor="@color/white"
         android:background="@drawable/shape_btn_start"
         android:layout_margin="@dimen/dp_20"/>
 </RelativeLayout>

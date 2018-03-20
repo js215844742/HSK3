@@ -19,5 +19,6 @@
         </activity>
         <activity android:name=".activity.activity.start.FixNameActivity" />
         <activity android:name=".activity.activity.main.MainActivity" />
+        <activity android:name=".activity.activity.main.sentence.SentenceStyleActivity" />
     </application>
 </manifest>
