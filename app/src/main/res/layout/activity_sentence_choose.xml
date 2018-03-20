@@ -1,0 +1,13 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@+id/view_head"
+        layout="@layout/view_head" />
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_head">
+    </ListView>
+</RelativeLayout>

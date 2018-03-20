@@ -21,8 +21,7 @@
                 android:id="@+id/img_head"
                 android:layout_width="@dimen/dp_80"
                 android:layout_height="@dimen/dp_80"
-                android:layout_centerVertical="true"
-                android:src="@mipmap/ic_launcher"/>
+                android:layout_centerVertical="true"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -59,8 +58,9 @@
             <ImageView
                 android:layout_width="@dimen/dp_30"
                 android:layout_height="@dimen/dp_30"
-                android:src="@mipmap/ic_launcher"
-                android:layout_marginLeft="@dimen/dp_10"/>
+                android:src="@mipmap/img_mine_stage"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:scaleType="fitXY"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -78,8 +78,9 @@
             <ImageView
                 android:layout_width="@dimen/dp_30"
                 android:layout_height="@dimen/dp_30"
-                android:src="@mipmap/ic_launcher"
-                android:layout_marginLeft="@dimen/dp_10"/>
+                android:src="@mipmap/img_mine_about"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:scaleType="fitXY"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -97,8 +98,9 @@
             <ImageView
                 android:layout_width="@dimen/dp_30"
                 android:layout_height="@dimen/dp_30"
-                android:src="@mipmap/ic_launcher"
-                android:layout_marginLeft="@dimen/dp_10"/>
+                android:src="@mipmap/img_mine_help"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:scaleType="fitXY"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -116,8 +118,9 @@
             <ImageView
                 android:layout_width="@dimen/dp_30"
                 android:layout_height="@dimen/dp_30"
-                android:src="@mipmap/ic_launcher"
-                android:layout_marginLeft="@dimen/dp_10"/>
+                android:src="@mipmap/img_mine_setting"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:scaleType="fitXY"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

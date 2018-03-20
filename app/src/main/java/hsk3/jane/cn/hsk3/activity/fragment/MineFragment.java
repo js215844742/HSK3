@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import hsk3.jane.cn.hsk3.R;
+import hsk3.jane.cn.hsk3.base.MySpKey;
+import hsk3.jane.cn.hsk3.utils.SpUtils;
 import hsk3.jane.cn.hsk3.view.GlideCircleTransform;
 
 /**
@@ -44,5 +46,7 @@ public class MineFragment extends Fragment {
         genderTv = view.findViewById(R.id.tv_genderTv);
         headImg = view.findViewById(R.id.img_head);
         Glide.with(this).load(R.mipmap.img_fix_name).transform(new GlideCircleTransform(getActivity())).into(headImg);
+        nameTv.setText(SpUtils.getStringPreference(MySpKey.SP_USER_NAME_KEY));
+        genderTv.setText(SpUtils.getIntPreference(MySpKey.SP_USER_GENDER_KEY)==1?"先生":"女士");
     }
 }

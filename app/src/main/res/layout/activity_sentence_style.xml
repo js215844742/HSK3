@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/view_head"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center">
         <Button
             android:id="@+id/btn_style_1"
             android:layout_width="@dimen/dp_200"
@@ -19,7 +19,8 @@
             android:text="连词成句"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:layout_marginTop="@dimen/dp_30"/>
+            android:layout_marginTop="@dimen/dp_10"
+            android:onClick="onStart"/>
         <Button
             android:id="@+id/btn_style_2"
             android:layout_width="@dimen/dp_200"
@@ -29,7 +30,8 @@
             android:text="句子练习"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:layout_marginTop="@dimen/dp_30"/>
+            android:layout_marginTop="@dimen/dp_30"
+            android:onClick="onStart"/>
         <Button
             android:id="@+id/btn_style_3"
             android:layout_width="@dimen/dp_200"
@@ -39,7 +41,8 @@
             android:text="造句练习"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:layout_marginTop="@dimen/dp_30"/>
+            android:layout_marginTop="@dimen/dp_30"
+            android:onClick="onStart"/>
         <Button
             android:id="@+id/btn_style_4"
             android:layout_width="@dimen/dp_200"
@@ -49,6 +52,7 @@
             android:text="声调练习"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:layout_marginTop="@dimen/dp_30"/>
+            android:layout_marginTop="@dimen/dp_30"
+            android:onClick="onStart"/>
     </LinearLayout>
 </RelativeLayout>
