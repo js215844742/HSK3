@@ -1,4 +1,4 @@
-package hsk3.jane.cn.hsk3.activity.activity.main;
+package hsk3.jane.cn.hsk3.activity.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;

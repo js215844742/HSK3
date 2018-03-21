@@ -1,6 +1,5 @@
 package hsk3.jane.cn.hsk3.activity.activity.start;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -14,11 +13,10 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import hsk3.jane.cn.hsk3.R;
-import hsk3.jane.cn.hsk3.activity.activity.main.MainActivity;
+import hsk3.jane.cn.hsk3.activity.activity.MainActivity;
 import hsk3.jane.cn.hsk3.base.BaseActivity;
 import hsk3.jane.cn.hsk3.base.MySpKey;
 import hsk3.jane.cn.hsk3.utils.AndroidUtils;
-import hsk3.jane.cn.hsk3.utils.MathUtils;
 import hsk3.jane.cn.hsk3.utils.SpUtils;
 import hsk3.jane.cn.hsk3.view.GlideCircleTransform;
 

@@ -2,7 +2,6 @@ package hsk3.jane.cn.hsk3.activity.activity.main.sentence;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -32,7 +31,7 @@ public class SentenceStyleActivity extends BaseActivity {
     }
 
     public void onStart(View view){
-        Intent intent = new Intent(this, SentenceChooseActivity.class);
+        Intent intent = new Intent(this, SentenceChooseSyntaxActivity.class);
         switch (view.getId()){
             case R.id.btn_style_1:
                 intent.putExtra("type", 1);

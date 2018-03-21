@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="hsk3.jane.cn.hsk3">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:name=".base.MyApp"
         android:allowBackup="true"
@@ -18,8 +25,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.activity.start.FixNameActivity" />
-        <activity android:name=".activity.activity.main.MainActivity" />
+        <activity android:name=".activity.activity.MainActivity" />
         <activity android:name=".activity.activity.main.sentence.SentenceStyleActivity" />
-        <activity android:name=".activity.activity.main.sentence.SentenceChooseActivity" />
+        <activity android:name=".activity.activity.main.sentence.SentenceChooseSyntaxActivity" />
+        <activity android:name=".activity.activity.main.sentence.SentencePracticeWordExampleActivity" />
+        <activity android:name=".activity.activity.main.sentence.SentencePracticeWordActivity" />
     </application>
 </manifest>

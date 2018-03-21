@@ -17,6 +17,7 @@
             android:layout_gravity="center"
             android:text="标题"
             android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
             android:textColor="@color/black_light"/>
     </android.support.v7.widget.Toolbar>
     <View

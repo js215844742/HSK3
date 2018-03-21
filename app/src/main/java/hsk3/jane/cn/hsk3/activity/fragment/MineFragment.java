@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -20,9 +22,12 @@ import hsk3.jane.cn.hsk3.view.GlideCircleTransform;
  * Created by Administrator on 2018/3/19 0019.
  */
 
-public class MineFragment extends Fragment {
+public class MineFragment extends Fragment implements View.OnClickListener {
     private ImageView headImg;
     private TextView nameTv, genderTv;
+    private RelativeLayout infoView;
+    private LinearLayout stageView, aboutView, helpView, settingView;
+
     public static MineFragment newInstance(){
 //        Bundle bundle = new Bundle();
 //        bundle.putInt("", 0);
@@ -45,8 +50,34 @@ public class MineFragment extends Fragment {
         nameTv = view.findViewById(R.id.tv_name);
         genderTv = view.findViewById(R.id.tv_genderTv);
         headImg = view.findViewById(R.id.img_head);
+        infoView = view.findViewById(R.id.view_info);
+        stageView = view.findViewById(R.id.view_stage);
+        aboutView = view.findViewById(R.id.view_about);
+        helpView = view.findViewById(R.id.view_help);
+        settingView = view.findViewById(R.id.view_setting);
         Glide.with(this).load(R.mipmap.img_fix_name).transform(new GlideCircleTransform(getActivity())).into(headImg);
         nameTv.setText(SpUtils.getStringPreference(MySpKey.SP_USER_NAME_KEY));
         genderTv.setText(SpUtils.getIntPreference(MySpKey.SP_USER_GENDER_KEY)==1?"先生":"女士");
+        infoView.setOnClickListener(this);
+        stageView.setOnClickListener(this);
+        aboutView.setOnClickListener(this);
+        helpView.setOnClickListener(this);
+        settingView.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.view_info:
+                break;
+            case R.id.view_stage:
+                break;
+            case R.id.view_about:
+                break;
+            case R.id.view_head:
+                break;
+            case R.id.view_setting:
+                break;
+        }
     }
 }

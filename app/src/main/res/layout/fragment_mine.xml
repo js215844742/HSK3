@@ -48,10 +48,10 @@
         </RelativeLayout>
 
         <LinearLayout
-            android:id="@+id/view_status"
+            android:id="@+id/view_stage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@drawable/bg_item_press"
             android:gravity="center_vertical"
             android:layout_marginTop="@dimen/dp_20"
             android:padding="@dimen/dp_10">
@@ -71,7 +71,7 @@
             android:id="@+id/view_about"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@drawable/bg_item_press"
             android:gravity="center_vertical"
             android:layout_marginTop="@dimen/dp_20"
             android:padding="@dimen/dp_10">
@@ -91,7 +91,7 @@
             android:id="@+id/view_help"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@drawable/bg_item_press"
             android:gravity="center_vertical"
             android:layout_marginTop="@dimen/dp_1"
             android:padding="@dimen/dp_10">
@@ -111,7 +111,7 @@
             android:id="@+id/view_setting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@drawable/bg_item_press"
             android:gravity="center_vertical"
             android:layout_marginTop="@dimen/dp_20"
             android:padding="@dimen/dp_10">
