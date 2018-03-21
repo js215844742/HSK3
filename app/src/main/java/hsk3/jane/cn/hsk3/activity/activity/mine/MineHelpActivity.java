@@ -10,33 +10,34 @@ import hsk3.jane.cn.hsk3.base.BaseActivity;
 import hsk3.jane.cn.hsk3.utils.AndroidUtils;
 
 /**
- * 个人中心*个人信息
- * Created by Jane on 2018/3/21.
+ * 个人中心*帮助和反馈
+ * Created by Administrator on 2018/3/21 0021.
  */
 
-public class MineInfoActivity extends BaseActivity {
+public class MineHelpActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mine_info);
+        setContentView(R.layout.activity_mine_help);
         initView();
     }
 
     private void initView() {
-        setTitle("个人信息");
+        setTitle("帮助与反馈");
         initToolbar((Toolbar)findViewById(R.id.toolbar));
+
     }
 
     public void onStart(View view){
         switch (view.getId()){
-            case R.id.view_head:
-                AndroidUtils.Toast(this, "换头像");
+            case R.id.view_instruction:
+                AndroidUtils.startActivity(this, MineHelpInstructionActivity.class, true);
                 break;
-            case R.id.view_name:
-                AndroidUtils.startActivity(this, MineInfoNameActivity.class, true);
+            case R.id.view_question:
+                AndroidUtils.startActivity(this, MineHelpQuestionActivity.class, true);
                 break;
-            case R.id.view_gender:
-                AndroidUtils.Toast(this, "选择性别");
+            case R.id.view_feedback:
+                AndroidUtils.startActivity(this, MineHelpFeedbackActivity.class, true);
                 break;
         }
     }

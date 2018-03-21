@@ -10,33 +10,30 @@ import hsk3.jane.cn.hsk3.base.BaseActivity;
 import hsk3.jane.cn.hsk3.utils.AndroidUtils;
 
 /**
- * 个人中心*个人信息
- * Created by Jane on 2018/3/21.
+ * 个人中心*设置
+ * Created by Administrator on 2018/3/21 0021.
  */
 
-public class MineInfoActivity extends BaseActivity {
+public class MineSettingActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mine_info);
-        initView();
+        setContentView(R.layout.activity_mine_setting);
+
     }
 
     private void initView() {
-        setTitle("个人信息");
+        setTitle("设置");
         initToolbar((Toolbar)findViewById(R.id.toolbar));
     }
 
     public void onStart(View view){
         switch (view.getId()){
-            case R.id.view_head:
-                AndroidUtils.Toast(this, "换头像");
+            case R.id.view_data:
+                AndroidUtils.Toast(this, "加载数据");
                 break;
-            case R.id.view_name:
-                AndroidUtils.startActivity(this, MineInfoNameActivity.class, true);
-                break;
-            case R.id.view_gender:
-                AndroidUtils.Toast(this, "选择性别");
+            case R.id.view_theme:
+                AndroidUtils.startActivity(this, MineSettingThemeActivity.class, true);
                 break;
         }
     }

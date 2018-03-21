@@ -30,5 +30,16 @@
         <activity android:name=".activity.activity.main.sentence.SentenceChooseSyntaxActivity" />
         <activity android:name=".activity.activity.main.sentence.SentencePracticeWordExampleActivity" />
         <activity android:name=".activity.activity.main.sentence.SentencePracticeWordActivity" />
+
+        <activity android:name=".activity.activity.mine.MineInfoActivity" />
+        <activity android:name=".activity.activity.mine.MineStageActivity" />
+        <activity android:name=".activity.activity.mine.MineAboutActivity" />
+        <activity android:name=".activity.activity.mine.MineHelpActivity" />
+        <activity android:name=".activity.activity.mine.MineSettingActivity" />
+        <activity android:name=".activity.activity.mine.MineInfoNameActivity" />
+        <activity android:name=".activity.activity.mine.MineHelpInstructionActivity" />
+        <activity android:name=".activity.activity.mine.MineHelpQuestionActivity" />
+        <activity android:name=".activity.activity.mine.MineHelpFeedbackActivity" />
+        <activity android:name=".activity.activity.mine.MineSettingThemeActivity" />
     </application>
 </manifest>

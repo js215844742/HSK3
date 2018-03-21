@@ -14,7 +14,13 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import hsk3.jane.cn.hsk3.R;
+import hsk3.jane.cn.hsk3.activity.activity.mine.MineAboutActivity;
+import hsk3.jane.cn.hsk3.activity.activity.mine.MineHelpActivity;
+import hsk3.jane.cn.hsk3.activity.activity.mine.MineInfoActivity;
+import hsk3.jane.cn.hsk3.activity.activity.mine.MineSettingActivity;
+import hsk3.jane.cn.hsk3.activity.activity.mine.MineStageActivity;
 import hsk3.jane.cn.hsk3.base.MySpKey;
+import hsk3.jane.cn.hsk3.utils.AndroidUtils;
 import hsk3.jane.cn.hsk3.utils.SpUtils;
 import hsk3.jane.cn.hsk3.view.GlideCircleTransform;
 
@@ -69,14 +75,19 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.view_info:
+                AndroidUtils.startActivity(getActivity(), MineInfoActivity.class, true);
                 break;
             case R.id.view_stage:
+                AndroidUtils.startActivity(getActivity(), MineStageActivity.class, true);
                 break;
             case R.id.view_about:
+                AndroidUtils.startActivity(getActivity(), MineAboutActivity.class, true);
                 break;
             case R.id.view_head:
+                AndroidUtils.startActivity(getActivity(), MineHelpActivity.class, true);
                 break;
             case R.id.view_setting:
+                AndroidUtils.startActivity(getActivity(), MineSettingActivity.class, true);
                 break;
         }
     }

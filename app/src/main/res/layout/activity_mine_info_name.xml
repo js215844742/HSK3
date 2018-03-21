@@ -1,0 +1,18 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@+id/view_head"
+        layout="@layout/view_head_1" />
+    <EditText
+        android:id="@+id/edt_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@drawable/shape_bg_edit_answer"
+        android:layout_below="@+id/view_head"
+        android:layout_margin="@dimen/dp_30"
+        android:text="我的名字"
+        android:hint="我的名字"
+        android:textColor="@color/black_light"
+        android:textSize="@dimen/sp_16"/>
+</RelativeLayout>

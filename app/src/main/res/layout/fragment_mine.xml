@@ -104,7 +104,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="帮助和反馈"
+                android:text="帮助与反馈"
                 android:layout_marginLeft="@dimen/dp_10"/>
         </LinearLayout>
         <LinearLayout
