@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.activity.start.FixNameActivity" />
-        <activity android:name=".activity.activity.MainActivity" />
+        <activity android:name=".activity.activity.main.MainActivity" />
         <activity android:name=".activity.activity.main.sentence.SentenceStyleActivity" />
         <activity android:name=".activity.activity.main.sentence.SentenceChooseSyntaxActivity" />
         <activity android:name=".activity.activity.main.sentence.SentencePracticeWordExampleActivity" />
@@ -41,5 +41,6 @@
         <activity android:name=".activity.activity.mine.MineHelpQuestionActivity" />
         <activity android:name=".activity.activity.mine.MineHelpFeedbackActivity" />
         <activity android:name=".activity.activity.mine.MineSettingThemeActivity" />
+        <activity android:name=".activity.activity.mine.MineAboutAgreementActivity" />
     </application>
 </manifest>

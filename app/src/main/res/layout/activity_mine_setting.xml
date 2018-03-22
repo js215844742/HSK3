@@ -8,8 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_below="@+id/view_head"
-        android:onClick="onStart">
+        android:layout_below="@+id/view_head">
         <RelativeLayout
             android:id="@+id/view_data"
             android:layout_width="match_parent"
@@ -17,7 +16,8 @@
             android:background="@drawable/bg_item_press"
             android:layout_marginTop="@dimen/dp_20"
             android:paddingLeft="@dimen/dp_20"
-            android:paddingRight="@dimen/dp_20">
+            android:paddingRight="@dimen/dp_20"
+            android:onClick="onStart">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -49,5 +49,19 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
+
+
     </LinearLayout>
+    <Button
+        android:id="@+id/btn_exit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_alignParentBottom="true"
+        android:text="退出"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="@dimen/sp_16"
+        android:onClick="onStart"
+        android:background="@drawable/shape_btn_exit"
+        android:layout_margin="@dimen/dp_20"/>
 </RelativeLayout>

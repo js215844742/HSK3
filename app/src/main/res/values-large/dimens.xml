@@ -138,6 +138,8 @@
     <dimen name="dp_300">450dp</dimen>
     <dimen name="dp_303">459.5dp</dimen>
     <dimen name="dp_330">495dp</dimen>
+    <dimen name="dp_340">510dp</dimen>
+    <dimen name="dp_350">525dp</dimen>
 
     <dimen name="dp_358">537dp</dimen>
     <dimen name="dp_400">600dp</dimen>

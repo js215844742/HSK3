@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import hsk3.jane.cn.hsk3.R;
-import hsk3.jane.cn.hsk3.activity.activity.MainActivity;
+import hsk3.jane.cn.hsk3.activity.activity.main.MainActivity;
 import hsk3.jane.cn.hsk3.base.BaseActivity;
 import hsk3.jane.cn.hsk3.base.MySpKey;
 import hsk3.jane.cn.hsk3.utils.AndroidUtils;

@@ -19,7 +19,7 @@ public class MineSettingActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mine_setting);
-
+        initView();
     }
 
     private void initView() {
@@ -34,6 +34,8 @@ public class MineSettingActivity extends BaseActivity {
                 break;
             case R.id.view_theme:
                 AndroidUtils.startActivity(this, MineSettingThemeActivity.class, true);
+                break;
+            case R.id.btn_exit:
                 break;
         }
     }

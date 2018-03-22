@@ -8,21 +8,20 @@ import hsk3.jane.cn.hsk3.R;
 import hsk3.jane.cn.hsk3.base.BaseActivity;
 
 /**
- * 常见问题解答
- * Created by Administrator on 2018/3/21 0021.
+ * 用户协议
+ * Created by Administrator on 2018/3/22 0022.
  */
 
-public class MineHelpQuestionActivity extends BaseActivity {
+public class MineAboutAgreementActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mine_help_question);
+        setContentView(R.layout.activity_mine_about_agreement);
         initView();
     }
 
     private void initView() {
-        setTitle("常见问题");
+        setTitle("");
         initToolbar((Toolbar)findViewById(R.id.toolbar));
-
     }
 }

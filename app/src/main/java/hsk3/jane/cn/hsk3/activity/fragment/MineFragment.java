@@ -83,7 +83,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
             case R.id.view_about:
                 AndroidUtils.startActivity(getActivity(), MineAboutActivity.class, true);
                 break;
-            case R.id.view_head:
+            case R.id.view_help:
                 AndroidUtils.startActivity(getActivity(), MineHelpActivity.class, true);
                 break;
             case R.id.view_setting:

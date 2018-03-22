@@ -1,0 +1,31 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@+id/view_head"
+        layout="@layout/view_head" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_head">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="用户协议书"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_10"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="用户协议书内容，待编辑。"
+                android:textSize="@dimen/sp_14"
+                android:layout_margin="@dimen/dp_10"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

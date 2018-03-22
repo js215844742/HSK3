@@ -12,7 +12,7 @@ import hsk3.jane.cn.hsk3.R;
 import hsk3.jane.cn.hsk3.utils.AndroidUtils;
 
 /**
- * Created by Jane on 2018/3/5.
+ * Created by Jane on 2018/3/5.`
  */
 
 public class BaseActivity extends AppCompatActivity {
