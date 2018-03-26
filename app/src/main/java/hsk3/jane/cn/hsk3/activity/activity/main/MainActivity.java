@@ -2,23 +2,13 @@ package hsk3.jane.cn.hsk3.activity.activity.main;
 
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import hsk3.jane.cn.hsk3.R;
-import hsk3.jane.cn.hsk3.activity.adapter.FragmentAdapter;
 import hsk3.jane.cn.hsk3.activity.fragment.HomeFragment;
 import hsk3.jane.cn.hsk3.activity.fragment.MineFragment;
-import hsk3.jane.cn.hsk3.activity.fragment.QuestionFragment;
 import hsk3.jane.cn.hsk3.base.BaseActivity;
-import hsk3.jane.cn.hsk3.data.Data;
 import hsk3.jane.cn.hsk3.view.BottomNavigationViewEx;
 
 public class MainActivity extends BaseActivity {

@@ -14,7 +14,7 @@ import hsk3.jane.cn.hsk3.base.BaseActivity;
 import hsk3.jane.cn.hsk3.utils.Utils;
 
 /**
- * 选择句法
+ * 选择句法,公式
  * Created by Administrator on 2018/3/20 0020.
  */
 

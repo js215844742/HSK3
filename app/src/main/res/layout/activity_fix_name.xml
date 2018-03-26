@@ -7,12 +7,14 @@
         android:layout_width="@dimen/dp_120"
         android:layout_height="@dimen/dp_120"
         android:layout_centerHorizontal="true"
-        android:layout_margin="@dimen/dp_80"/>
+        android:layout_marginTop="@dimen/dp_160"
+        />
     <RelativeLayout
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_150"
-        android:layout_below="@+id/img_head">
+        android:layout_below="@+id/img_head"
+        android:layout_marginTop="@dimen/dp_30">
         <LinearLayout
             android:id="@+id/view_fix_name"
             android:layout_width="match_parent"

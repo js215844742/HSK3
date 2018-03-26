@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import hsk3.jane.cn.hsk3.R;
-import hsk3.jane.cn.hsk3.data.Data;
+import hsk3.jane.cn.hsk3.data.SentenceData;
 import hsk3.jane.cn.hsk3.utils.ViewHolder;
 
 /**
@@ -27,12 +27,12 @@ public class SyntaxAdapter extends BaseAdapter{
 
     @Override
     public int getCount() {
-        return Data.SYNTAX.length;
+        return SentenceData.SYNTAX.length;
     }
 
     @Override
     public Object getItem(int i) {
-        return Data.SYNTAX[i];
+        return SentenceData.SYNTAX[i];
     }
 
     @Override
@@ -42,7 +42,7 @@ public class SyntaxAdapter extends BaseAdapter{
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        String item = Data.SYNTAX[i];
+        String item = SentenceData.SYNTAX[i];
         if (view == null){
             view = inflater.inflate(R.layout.item_sentence_syntax, null);
         }

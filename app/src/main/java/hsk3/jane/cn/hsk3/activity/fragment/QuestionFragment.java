@@ -14,11 +14,12 @@ import java.util.ArrayList;
 import hsk3.jane.cn.hsk3.R;
 import hsk3.jane.cn.hsk3.activity.adapter.QuestionAdapter;
 import hsk3.jane.cn.hsk3.activity.bean.QuestionBean;
-import hsk3.jane.cn.hsk3.data.Data;
+import hsk3.jane.cn.hsk3.data.SentenceData;
 
-import static hsk3.jane.cn.hsk3.data.Data.HANZIS;
-import static hsk3.jane.cn.hsk3.data.Data.PINYINS;
-import static hsk3.jane.cn.hsk3.data.Data.RIGHTANSWERS;
+import static hsk3.jane.cn.hsk3.data.SentenceQuestionData.HANZIS;
+import static hsk3.jane.cn.hsk3.data.SentenceQuestionData.PINYINS;
+import static hsk3.jane.cn.hsk3.data.SentenceQuestionData.RIGHTANSWERS;
+
 
 /**
  * Created by Jane on 2018/3/6.
@@ -53,7 +54,7 @@ public class QuestionFragment extends Fragment{
         adapter = new QuestionAdapter(getActivity(), arrayList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(adapter);
-        typeTv.setText(Data.SYNTAX[index]);
+        typeTv.setText(SentenceData.SYNTAX[index]);
 
         for (int i = 0; i < PINYINS[index].length; i++) {
             arrayList.add(new QuestionBean(PINYINS[index][i], HANZIS[index][i], RIGHTANSWERS[index][i]));

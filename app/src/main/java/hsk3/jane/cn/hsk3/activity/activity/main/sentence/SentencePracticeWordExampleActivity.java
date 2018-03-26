@@ -11,8 +11,7 @@ import android.widget.TextView;
 
 import hsk3.jane.cn.hsk3.R;
 import hsk3.jane.cn.hsk3.base.BaseActivity;
-import hsk3.jane.cn.hsk3.data.Data;
-import hsk3.jane.cn.hsk3.utils.AndroidUtils;
+import hsk3.jane.cn.hsk3.data.SentenceData;
 import hsk3.jane.cn.hsk3.utils.AudioUtils;
 
 /**
@@ -24,7 +23,7 @@ public class SentencePracticeWordExampleActivity extends BaseActivity implements
     private ImageView playImg;
     private Button beginBtn;
 
-    private int index;
+    private int index;//句型序号
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +42,9 @@ public class SentencePracticeWordExampleActivity extends BaseActivity implements
         playImg = findViewById(R.id.img_play);
         beginBtn = findViewById(R.id.btn_begin);
 
-        syntaxTv.setText("句法公式："+Data.SYNTAX[index]);
-        contextTv.setText(Data.EXAMPLE[index]);
-        translationTv.setText(Data.EXAMPLE_TRANSLATION[index]);
+        syntaxTv.setText("句法公式："+ SentenceData.SYNTAX[index]);
+        contextTv.setText(SentenceData.EXAMPLE[index]);
+        translationTv.setText(SentenceData.EXAMPLE_TRANSLATION[index]);
 
         playImg.setOnClickListener(this);
         translateBtn.setOnClickListener(this);
