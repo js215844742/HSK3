@@ -46,7 +46,9 @@ public class SyntaxAdapter extends BaseAdapter{
         if (view == null){
             view = inflater.inflate(R.layout.item_sentence_syntax, null);
         }
+        TextView indexTv = (TextView) ViewHolder.get(view, R.id.tv_index);
         TextView title = (TextView) ViewHolder.get(view, R.id.tv_title);
+        indexTv.setText("句法"+(i+1)+":");
         title.setText(item);
         return view;
     }

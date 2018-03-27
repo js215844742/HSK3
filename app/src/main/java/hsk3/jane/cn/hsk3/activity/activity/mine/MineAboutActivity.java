@@ -4,10 +4,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
 
 import hsk3.jane.cn.hsk3.R;
 import hsk3.jane.cn.hsk3.base.BaseActivity;
 import hsk3.jane.cn.hsk3.utils.AndroidUtils;
+import hsk3.jane.cn.hsk3.view.CornersTransform;
 
 /**
  * 个人中心*关于
@@ -25,6 +29,7 @@ public class MineAboutActivity extends BaseActivity {
     private void initView() {
         setTitle("关于");
         initToolbar((Toolbar)findViewById(R.id.toolbar));
+        Glide.with(this).load(R.mipmap.logo).transform(new CornersTransform(this, 20)).into((ImageView) findViewById(R.id.img_logo));
     }
 
     public void onStart(View view){
