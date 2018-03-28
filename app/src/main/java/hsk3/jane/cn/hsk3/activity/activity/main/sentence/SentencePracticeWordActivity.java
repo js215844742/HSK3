@@ -14,6 +14,7 @@ import android.widget.TextView;
 import hsk3.jane.cn.hsk3.R;
 import hsk3.jane.cn.hsk3.base.BaseActivity;
 import hsk3.jane.cn.hsk3.data.SentenceQuestionData;
+import hsk3.jane.cn.hsk3.utils.AndroidUtils;
 import hsk3.jane.cn.hsk3.utils.AudioUtils;
 import hsk3.jane.cn.hsk3.view.FluidLayout;
 
@@ -123,7 +124,7 @@ public class SentencePracticeWordActivity extends BaseActivity implements View.O
                     nextBtn.setVisibility(View.GONE);
                     initData();
                 }else{//做完了
-
+                    AndroidUtils.Toast(this, "最后一题");
                 }
                 break;
 

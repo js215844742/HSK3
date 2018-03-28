@@ -100,15 +100,24 @@ public class AudioUtils {
         });
     }
     public boolean isSpeaking(){
-        return mySynthesizer.isSpeaking();
+        if (mySynthesizer!=null) {
+            return mySynthesizer.isSpeaking();
+        }
+        return false;
     }
     public void resume(){
-        mySynthesizer.resumeSpeaking();
+        if (mySynthesizer!=null) {
+            mySynthesizer.resumeSpeaking();
+        }
     }
     public void pause(){
-        mySynthesizer.pauseSpeaking();
+        if (mySynthesizer!=null && mySynthesizer.isSpeaking()) {
+            mySynthesizer.pauseSpeaking();
+        }
     }
     public void stopSpeak(){
-        mySynthesizer.stopSpeaking();
+        if (mySynthesizer!=null && mySynthesizer.isSpeaking()) {
+            mySynthesizer.stopSpeaking();
+        }
     }
 }

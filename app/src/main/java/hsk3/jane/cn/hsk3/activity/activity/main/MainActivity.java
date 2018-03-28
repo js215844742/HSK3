@@ -3,12 +3,14 @@ package hsk3.jane.cn.hsk3.activity.activity.main;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 
 import hsk3.jane.cn.hsk3.R;
 import hsk3.jane.cn.hsk3.activity.fragment.HomeFragment;
 import hsk3.jane.cn.hsk3.activity.fragment.MineFragment;
 import hsk3.jane.cn.hsk3.base.BaseActivity;
+import hsk3.jane.cn.hsk3.utils.AndroidUtils;
 import hsk3.jane.cn.hsk3.view.BottomNavigationViewEx;
 
 public class MainActivity extends BaseActivity {
@@ -51,5 +53,19 @@ public class MainActivity extends BaseActivity {
         ft.add(R.id.fragment_All_id, mineFragment).hide(mineFragment);
         ft.commitAllowingStateLoss();
     }
-
+    private long exitTime0 = 0;
+    private long exitTime1 = 0;
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if (System.currentTimeMillis() - exitTime0 > 1000) {
+                AndroidUtils.Toast(this, "再点一次退出");
+                exitTime0 = System.currentTimeMillis();
+            } else if (System.currentTimeMillis() - exitTime1 > 1000) {
+                finish();
+            }
+            return false;
+        }
+        return false;
+    }
 }

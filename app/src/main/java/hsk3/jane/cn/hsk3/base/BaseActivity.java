@@ -21,6 +21,7 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         AndroidUtils.hideNavigationBar(this);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+        MyActivityManager.addActivity(this);
     }
 
     public void setTitle(String title){

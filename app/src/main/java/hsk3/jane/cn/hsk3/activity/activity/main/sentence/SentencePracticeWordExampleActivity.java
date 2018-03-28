@@ -42,7 +42,7 @@ public class SentencePracticeWordExampleActivity extends BaseActivity implements
         playImg = findViewById(R.id.img_play);
         beginBtn = findViewById(R.id.btn_begin);
 
-        syntaxTv.setText("句法公式："+ SentenceData.SYNTAX[index]);
+        syntaxTv.setText(SentenceData.SYNTAX[index]);
         contextTv.setText(SentenceData.EXAMPLE[index]);
         translationTv.setText(SentenceData.EXAMPLE_TRANSLATION[index]);
 
@@ -71,5 +71,11 @@ public class SentencePracticeWordExampleActivity extends BaseActivity implements
                 startActivity(intent);
                 break;
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        AudioUtils.getInstance().stopSpeak();
     }
 }

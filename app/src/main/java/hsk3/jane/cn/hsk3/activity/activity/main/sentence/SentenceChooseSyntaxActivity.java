@@ -48,17 +48,17 @@ public class SentenceChooseSyntaxActivity extends BaseActivity {
                         startActivity(intent1);
                         break;
                     case 2://句子练习
-                        Intent intent2 = new Intent(SentenceChooseSyntaxActivity.this, SentencePracticeWordExampleActivity.class);
+                        Intent intent2 = new Intent(SentenceChooseSyntaxActivity.this, SentenceMoreSentenceActivity.class);
                         intent2.putExtra("index", i);
                         startActivity(intent2);
                         break;
                     case 3://造句练习
-                        Intent intent3 = new Intent(SentenceChooseSyntaxActivity.this, SentencePracticeWordExampleActivity.class);
+                        Intent intent3 = new Intent(SentenceChooseSyntaxActivity.this, SentenceMakeSentenceActivity.class);
                         intent3.putExtra("index", i);
                         startActivity(intent3);
                         break;
                     case 4://声调练习
-                        Intent intent4 = new Intent(SentenceChooseSyntaxActivity.this, SentencePracticeWordExampleActivity.class);
+                        Intent intent4 = new Intent(SentenceChooseSyntaxActivity.this, SentenceToneActivity.class);
                         intent4.putExtra("index", i);
                         startActivity(intent4);
                         break;
