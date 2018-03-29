@@ -23,7 +23,7 @@
         android:textColor="@color/white"
         android:background="@drawable/shape_bg_item_home_green"
         android:textSize="@dimen/sp_16"
-        android:text="继续"
+        android:text="更多句子练习"
         android:textStyle="bold"
         android:layout_marginTop="@dimen/dp_20"/>
     <Button

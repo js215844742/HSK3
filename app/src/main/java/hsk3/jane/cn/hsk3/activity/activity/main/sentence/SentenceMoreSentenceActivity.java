@@ -1,5 +1,6 @@
 package hsk3.jane.cn.hsk3.activity.activity.main.sentence;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -84,6 +85,9 @@ public class SentenceMoreSentenceActivity extends BaseActivity implements View.O
                 }
                 break;
             case R.id.btn_1:
+                Intent intent = new Intent(this, SentenceMakeSentenceActivity.class);
+                intent.putExtra("index", index);
+                AndroidUtils.startActivity(this, intent, true);
                 finish();
                 break;
             case R.id.btn_2:
@@ -101,6 +105,7 @@ public class SentenceMoreSentenceActivity extends BaseActivity implements View.O
         Button btn1 = view.findViewById(R.id.btn_1);
         Button btn2 = view.findViewById(R.id.btn_2);
         tipTv.setText("恭喜你!\n你已经完成了句法"+ (index+1)+"的句子练习");
+        btn1.setText("造句练习");
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
 

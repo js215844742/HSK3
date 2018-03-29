@@ -1,7 +1,9 @@
 package hsk3.jane.cn.hsk3.activity.activity.main.sentence;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -100,8 +102,10 @@ public class SentencePracticeWordActivity extends BaseActivity implements View.O
                 seeAnswerBtn.setVisibility(View.GONE);
                 redoBtn.setVisibility(View.VISIBLE);
                 nextBtn.setVisibility(View.VISIBLE);
+                checkAnswer();
                 break;
             case R.id.btn_redo:
+                answerEdt.setText("");
                 answerEdt.setVisibility(View.VISIBLE);
                 positionTv.setText("第" + (position + 1) + "题");
                 translationTv.setText(SentenceQuestionData.RIGHTANSWER_TRANSLATIONS[index][position]);
@@ -113,6 +117,7 @@ public class SentencePracticeWordActivity extends BaseActivity implements View.O
                 break;
             case R.id.btn_next:
                 if (position<SentenceQuestionData.RIGHTANSWER_TRANSLATIONS[index].length-1) {
+                    answerEdt.setText("");
                     position++;
                     answerEdt.setVisibility(View.VISIBLE);
                     positionTv.setText("第" + (position + 1) + "题");
@@ -124,10 +129,20 @@ public class SentencePracticeWordActivity extends BaseActivity implements View.O
                     nextBtn.setVisibility(View.GONE);
                     initData();
                 }else{//做完了
-                    AndroidUtils.Toast(this, "最后一题");
+                    showDiaolog();
+                    nextBtn.setText("已完成");
+//                    AndroidUtils.Toast(this, "最后一题");
                 }
                 break;
-
+            case R.id.btn_1:
+                Intent intent = new Intent(this, SentenceMoreSentenceActivity.class);
+                intent.putExtra("index", index);
+                AndroidUtils.startActivity(this, intent, true);
+                finish();
+                break;
+            case R.id.btn_2:
+                finish();
+                break;
         }
     }
 
@@ -142,4 +157,30 @@ public class SentencePracticeWordActivity extends BaseActivity implements View.O
         }
     }
 
+    private void showDiaolog() {
+        View view = LayoutInflater.from(this).inflate(R.layout.view_dialog_finish, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        ImageView img = view.findViewById(R.id.img_face);
+        TextView tipTv = view.findViewById(R.id.tv_tip);
+        Button btn1 = view.findViewById(R.id.btn_1);
+        Button btn2 = view.findViewById(R.id.btn_2);
+        tipTv.setText("恭喜你!\n你已经完成了句法"+ (index+1)+"的句子练习");
+        btn1.setText("更多句子练习");
+        btn1.setOnClickListener(this);
+        btn2.setOnClickListener(this);
+        builder.setView(view);
+        builder.setCancelable(false);
+        builder.show();
+    }
+
+    private void checkAnswer(){
+        String myAnswer = answerEdt.getText().toString();
+        myAnswerTv.setText(myAnswer);
+        if (myAnswer.equals(SentenceQuestionData.RIGHTANSWERS[index][position])){
+            myAnswerTv.setTextColor(getResources().getColor(R.color.green));
+        }else{
+            myAnswerTv.setTextColor(getResources().getColor(R.color.red));
+        }
+    }
 }

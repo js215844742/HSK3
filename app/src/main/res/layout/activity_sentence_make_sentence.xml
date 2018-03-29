@@ -57,7 +57,7 @@
             android:layout_height="@dimen/dp_50"
             android:layout_margin="@dimen/dp_20"
             android:background="@drawable/shape_bg_edit_answer"
-            android:hint="请输入答案"
+            android:hint="在这里造句"
             android:textColor="@color/black_light"
             android:textSize="@dimen/sp_16"/>
         <LinearLayout
