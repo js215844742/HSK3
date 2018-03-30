@@ -1,0 +1,15 @@
+<litepal>
+    <!-- 数据库的名字 -->
+    <dbname value="words"></dbname>
+
+    <!-- 数据库的版本 -->
+    <version value="1"></version>
+
+    <!-- 实体类和数据库表的映射关系 -->
+    <list>
+        <mapping class="jane.cn.hsk3.activity.bean.Word"></mapping>
+    </list>
+
+    <!-- 数据库的存储位置：“internal”：内部存储，其他人不能访问，默认；“external”：外部存储，所有人都可访问 -->
+    <storage value="external"></storage>
+</litepal>

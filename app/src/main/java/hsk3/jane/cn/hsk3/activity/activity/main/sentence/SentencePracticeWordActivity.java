@@ -21,6 +21,7 @@ import hsk3.jane.cn.hsk3.utils.AudioUtils;
 import hsk3.jane.cn.hsk3.view.FluidLayout;
 
 /**
+ * 连词成句练习
  * Created by Jane on 2018/3/21.
  */
 
@@ -61,11 +62,19 @@ public class SentencePracticeWordActivity extends BaseActivity implements View.O
         rightAnswerView = findViewById(R.id.view_right_answer);
         translationTv = findViewById(R.id.tv_translation);
 
-        positionTv.setText("第"+(position+1)+"题");
-        translationTv.setText(SentenceQuestionData.RIGHTANSWER_TRANSLATIONS[index][position]);
-        rightAnswerTv.setText(SentenceQuestionData.RIGHTANSWERS[index][position]);
-        answerView.setVisibility(View.GONE);
-        initData();
+        if (SentenceQuestionData.RIGHTANSWER_TRANSLATIONS[index].length>0) {
+            positionTv.setText("第" + (position + 1) + "题");
+            translationTv.setText(SentenceQuestionData.RIGHTANSWER_TRANSLATIONS[index][position]);
+            rightAnswerTv.setText(SentenceQuestionData.RIGHTANSWERS[index][position]);
+            answerView.setVisibility(View.GONE);
+            initData();
+        }else{
+//            positionTv.setText("第" + (position + 1) + "题");
+            ((TextView) findViewById(R.id.tv_)).setText("这个句法没有句子练习。");
+            answerEdt.setVisibility(View.GONE);
+            answerView.setVisibility(View.GONE);
+            seeAnswerBtn.setVisibility(View.GONE);
+        }
 
         playImg.setOnClickListener(this);
         rightAnswerTvTv.setOnClickListener(this);

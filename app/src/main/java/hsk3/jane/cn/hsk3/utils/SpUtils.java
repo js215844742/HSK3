@@ -12,7 +12,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 import hsk3.jane.cn.hsk3.base.AppConfig;
-import hsk3.jane.cn.hsk3.base.MyApp;
+import hsk3.jane.cn.hsk3.base.MyApplication;
 
 /**
  * Created by Jane on 2018/3/9.
@@ -20,7 +20,7 @@ import hsk3.jane.cn.hsk3.base.MyApp;
 
 public class SpUtils {
     public static SharedPreferences getAppPreferences() {
-        return MyApp.getContext().getSharedPreferences(AppConfig.BASE_PACKAGE, Context.MODE_PRIVATE);
+        return MyApplication.getContext().getSharedPreferences(AppConfig.BASE_PACKAGE, Context.MODE_PRIVATE);
     }
     /**
      * 存储string类型数据

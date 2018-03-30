@@ -19,6 +19,7 @@ import hsk3.jane.cn.hsk3.utils.AndroidUtils;
 import hsk3.jane.cn.hsk3.utils.AudioUtils;
 
 /**
+ * 更多句子练习
  * Created by Administrator on 2018/3/24 0024.
  */
 
@@ -37,7 +38,7 @@ public class SentenceMoreSentenceActivity extends BaseActivity implements View.O
         initView();
     }
     private void initView() {
-        setTitle("连词成句-句法"+ (index+1));
+        setTitle("句子练习-句法"+ (index+1));
         initToolbar((Toolbar) findViewById(R.id.toolbar));
         syntaxTv = findViewById(R.id.tv_syntax);
         contextTv = findViewById(R.id.tv_context_hanzi);

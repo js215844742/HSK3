@@ -12,12 +12,14 @@ import hsk3.jane.cn.hsk3.base.BaseActivity;
 import hsk3.jane.cn.hsk3.view.FluidLayout;
 
 /**
+ * 声调练习
  * Created by Jane on 2018/3/28.
  */
 
 public class SentenceToneActivity extends BaseActivity {
     private FluidLayout fluidLayout;
     private int index;//句型序号
+    private int position = 0;//当前序号
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +29,7 @@ public class SentenceToneActivity extends BaseActivity {
     }
 
     private void initView() {
-        setTitle("连词成句-句法"+ (index+1));
+        setTitle("声调练习-句法"+ (index+1));
         initToolbar((Toolbar) findViewById(R.id.toolbar));
         fluidLayout = findViewById(R.id.view_fluid);
         fluidLayout.removeAllViews();

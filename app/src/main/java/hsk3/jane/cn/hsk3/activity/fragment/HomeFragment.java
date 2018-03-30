@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment {
 
     private void initView(View view) {
         TextView textView = view.findViewById(R.id.tv_title);
-        textView.setText("练习");
+        textView.setText("首页");
         recyclerView = view.findViewById(R.id.recyclerView);
         adapter = new HomeAdapter(getActivity());
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));

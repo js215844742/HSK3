@@ -4,122 +4,136 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <include android:id="@+id/view_head"
         layout="@layout/view_head" />
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_below="@+id/view_head"
-        android:layout_above="@+id/view_bottom"
-        android:gravity="center_horizontal">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="句法公式："
-            android:textSize="@dimen/sp_18"
-            android:textColor="@color/black_light"
-            android:gravity="center_vertical"
-            android:paddingLeft="@dimen/dp_10"
-            android:background="@color/white"/>
-        <TextView
-            android:id="@+id/tv_syntax"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="MMMMMMMMMMMMMMMMMMMMMMM"
-            android:textSize="@dimen/sp_18"
-            android:textColor="@color/black_light"
-            android:gravity="center_vertical"
-            android:padding="@dimen/dp_10"
-            android:background="@color/white"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="第1题"
-            android:textSize="@dimen/sp_18"
-            android:textColor="@color/black_light"
-            android:padding="@dimen/dp_20"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="关键字"
-            android:textSize="@dimen/sp_18"
-            android:textColor="@color/black_light"
-            android:padding="@dimen/dp_10"/>
-        <hsk3.jane.cn.hsk3.view.FluidLayout
-            android:id="@+id/view_timu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_20">
-        </hsk3.jane.cn.hsk3.view.FluidLayout>
-
-        <EditText
-            android:id="@+id/edt_answer"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_50"
-            android:layout_margin="@dimen/dp_20"
-            android:background="@drawable/shape_bg_edit_answer"
-            android:hint="在这里造句"
-            android:textColor="@color/black_light"
-            android:textSize="@dimen/sp_16"/>
+        android:layout_above="@+id/view_bottom">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="@dimen/dp_20">
+            android:gravity="center_horizontal">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="我的答案"
+                android:text="句法公式："
+                android:textSize="@dimen/sp_18"
                 android:textColor="@color/black_light"
-                android:textSize="@dimen/sp_16"/>
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_10"
+                android:background="@color/white"/>
             <TextView
-                android:id="@+id/tv_my_answer"
+                android:id="@+id/tv_syntax"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="商店里没有一个苹果也。"
+                android:text=""
+                android:textSize="@dimen/sp_18"
                 android:textColor="@color/black_light"
-                android:textSize="@dimen/sp_16"/>
+                android:gravity="center_vertical"
+                android:padding="@dimen/dp_10"
+                android:background="@color/white"/>
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black_light"
+                android:padding="@dimen/dp_20"/>
+            <TextView
+                android:id="@+id/tv_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关键字"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black_light"
+                android:padding="@dimen/dp_10"/>
+            <hsk3.jane.cn.hsk3.view.FluidLayout
+                android:id="@+id/view_timu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="句子评价"
-                android:textColor="@color/black_light"
-                android:textSize="@dimen/sp_16"/>
-            <TextView
-                android:id="@+id/tv_right_answer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="商店里一个苹果也没有。"
-                android:textColor="@color/black_light"
-                android:textSize="@dimen/sp_16"/>
-        </LinearLayout>
+                android:layout_margin="@dimen/dp_20">
+            </hsk3.jane.cn.hsk3.view.FluidLayout>
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/edt_answer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_margin="@dimen/dp_20"
+                android:background="@drawable/shape_bg_edit_answer"
+                android:hint="在这里造句"
+                android:textColor="@color/black_light"
+                android:textSize="@dimen/sp_16"/>
+            <LinearLayout
+                android:id="@+id/view_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_20"
+                android:visibility="gone">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="我的答案"
+                    android:textColor="@color/black_light"
+                    android:textSize="@dimen/sp_16"/>
+                <TextView
+                    android:id="@+id/tv_my_answer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black_light"
+                    android:textSize="@dimen/sp_16"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="句子评价"
+                    android:textColor="@color/black_light"
+                    android:textSize="@dimen/sp_16"/>
+                <TextView
+                    android:id="@+id/tv_right_answer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black_light"
+                    android:textSize="@dimen/sp_16"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
     <LinearLayout
         android:id="@+id/view_bottom"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_alignParentBottom="true"
-        android:paddingLeft="@dimen/dp_20"
-        android:paddingRight="@dimen/dp_20">
+        android:layout_height="@dimen/dp_45"
+        android:layout_alignParentBottom="true">
         <Button
             android:id="@+id/btn_see_answer"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="@dimen/dp_45"
-            android:text="看答案"/>
+            android:layout_height="match_parent"
+            android:text="看答案"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18"
+            android:background="@color/green"/>
         <Button
             android:id="@+id/btn_redo"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="@dimen/dp_45"
+            android:layout_height="match_parent"
             android:text="重做"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18"
+            android:background="@color/green"/>
         <Button
             android:id="@+id/btn_next"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="@dimen/dp_45"
+            android:layout_height="match_parent"
             android:text="下一题"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18"
+            android:background="@color/green"
+            android:layout_marginLeft="@dimen/dp_0.5"/>
     </LinearLayout>
 </RelativeLayout>

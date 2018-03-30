@@ -15,7 +15,6 @@ import hsk3.jane.cn.hsk3.utils.AndroidUtils;
  * 选择练习项目
  * Created by Jane on 2018/3/20.
  */
-
 public class SentenceStyleActivity extends BaseActivity {
     private Button styleBtn1, styleBtn2, styleBtn3, styleBtn4;
     @Override
