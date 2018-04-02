@@ -18,6 +18,7 @@ import hsk3.jane.cn.hsk3.base.BaseActivity;
 import hsk3.jane.cn.hsk3.data.SentenceQuestionData;
 import hsk3.jane.cn.hsk3.utils.AndroidUtils;
 import hsk3.jane.cn.hsk3.utils.AudioUtils;
+import hsk3.jane.cn.hsk3.utils.DialogUtils;
 import hsk3.jane.cn.hsk3.view.FluidLayout;
 
 /**
@@ -106,12 +107,16 @@ public class SentencePracticeWordActivity extends BaseActivity implements View.O
                 }
                 break;
             case R.id.btn_see_answer:
-                answerEdt.setVisibility(View.GONE);
-                answerView.setVisibility(View.VISIBLE);
-                seeAnswerBtn.setVisibility(View.GONE);
-                redoBtn.setVisibility(View.VISIBLE);
-                nextBtn.setVisibility(View.VISIBLE);
-                checkAnswer();
+                if (checkEdit()) {
+                    answerEdt.setVisibility(View.GONE);
+                    answerView.setVisibility(View.VISIBLE);
+                    seeAnswerBtn.setVisibility(View.GONE);
+                    redoBtn.setVisibility(View.VISIBLE);
+                    nextBtn.setVisibility(View.VISIBLE);
+                    checkAnswer();
+                }else{
+                    AndroidUtils.Toast(this, "请根据题目填写合适的答案");
+                }
                 break;
             case R.id.btn_redo:
                 answerEdt.setText("");
@@ -183,13 +188,36 @@ public class SentencePracticeWordActivity extends BaseActivity implements View.O
         builder.show();
     }
 
+    private boolean checkEdit(){
+        String answer = answerEdt.getText().toString().trim();
+        int length = 0;
+        for (int i = 0; i < SentenceQuestionData.HANZIS[index][position].length; i++) {
+            if (!answer.contains(SentenceQuestionData.HANZIS[index][position][i])){
+                return false;
+            }
+            length += SentenceQuestionData.HANZIS[index][position][i].trim().length();
+        }
+        return true;
+    }
+
     private void checkAnswer(){
-        String myAnswer = answerEdt.getText().toString();
+        boolean result = false;
+        String myAnswer = answerEdt.getText().toString().trim();
         myAnswerTv.setText(myAnswer);
         if (myAnswer.equals(SentenceQuestionData.RIGHTANSWERS[index][position])){
             myAnswerTv.setTextColor(getResources().getColor(R.color.green));
+            result = true;
+        }else if (myAnswer.substring(0, myAnswer.length()-1).equals(SentenceQuestionData.RIGHTANSWERS[index][position])){
+            result = true;
+        }else if (myAnswer.equals(SentenceQuestionData.RIGHTANSWERS[index][position].substring(0, SentenceQuestionData.RIGHTANSWERS[index][position].length()-1))){
+            result = true;
+        }else if (myAnswer.equals(SentenceQuestionData.RIGHTANSWERS[index][position])){
+            result = true;
         }else{
             myAnswerTv.setTextColor(getResources().getColor(R.color.red));
+            result = false;
         }
+        DialogUtils.showCheckDiaolog(this, result);
     }
+
 }
