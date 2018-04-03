@@ -33,6 +33,8 @@
         <activity android:name=".activity.activity.main.sentence.SentenceMoreSentenceActivity" />
         <activity android:name=".activity.activity.main.sentence.SentenceMakeSentenceActivity" />
         <activity android:name=".activity.activity.main.sentence.SentenceToneActivity" />
+        <activity android:name=".activity.activity.main.sentence.SentenceWordDetailActivity"
+            android:theme="@style/MyDialogStyle"/>
 
         <activity android:name=".activity.activity.mine.MineInfoActivity" />
         <activity android:name=".activity.activity.mine.MineStageActivity" />
@@ -43,6 +45,7 @@
         <activity android:name=".activity.activity.mine.MineHelpInstructionActivity" />
         <activity android:name=".activity.activity.mine.MineHelpQuestionActivity" />
         <activity android:name=".activity.activity.mine.MineHelpFeedbackActivity" />
+        <activity android:name=".activity.activity.mine.MineSettingWordsActivity" />
         <activity android:name=".activity.activity.mine.MineSettingThemeActivity" />
         <activity android:name=".activity.activity.mine.MineAboutAgreementActivity" />
     </application>

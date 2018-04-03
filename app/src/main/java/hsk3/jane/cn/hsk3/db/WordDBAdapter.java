@@ -19,17 +19,16 @@ public class WordDBAdapter {
     private static String DATABASE_NAME = "words.db";
     private static String DATABASE_TABLE = "word_table";
 
-    private static String KEY_ID = "key_id";//ID
-    private static String KEY_INDEX = "key_index";//序号
-    private static String KEY_WORD = "key_word";//词语
-    private static String KEY_PINYIN = "key_pinyin";//拼音
-    private static String KEY_FIRST_LETTER = "key_first_letter";//首字母
-    private static String KEY_TONE = "key_tone";//声调
-    private static String KEY_TYPE = "key_type";//词性
-    private static String KEY_CLASS_NUMBER = "key_class_number";//课号
-    private static String KEY_EXPLANE = "key_explane";//词义
-
-    private static String KEY_LIANXIANG = "key_lianxiang";//联想功能
+    public static String KEY_ID = "key_id";//ID
+    public static String KEY_INDEX = "key_index";//序号
+    public static String KEY_WORD = "key_word";//词语
+    public static String KEY_PINYIN = "key_pinyin";//拼音
+    public static String KEY_FIRST_LETTER = "key_first_letter";//首字母
+    public static String KEY_TONE = "key_tone";//声调
+    public static String KEY_TYPE = "key_type";//词性
+    public static String KEY_CLASS_NUMBER = "key_class_number";//课号
+    public static String KEY_EXPLANE = "key_explane";//词义
+    public static String KEY_LIANXIANG = "key_lianxiang";//联想功能
 
     private Context context;
     private DatabaseHelper databaseHelper;
@@ -49,14 +48,14 @@ public class WordDBAdapter {
             stringBuffer.append("CREATE TABLE " + DATABASE_TABLE +" (");
             stringBuffer.append(KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,");
             stringBuffer.append(KEY_INDEX+ " INTEGER,");
-            stringBuffer.append(KEY_WORD + "TEXT,");
-            stringBuffer.append(KEY_PINYIN + "TEXT,");
-            stringBuffer.append(KEY_FIRST_LETTER + "TEXT,");
-            stringBuffer.append(KEY_TONE + "TEXT,");
-            stringBuffer.append(KEY_TYPE + "TEXT,");
-            stringBuffer.append(KEY_CLASS_NUMBER + "TEXT,");
-            stringBuffer.append(KEY_EXPLANE + "TEXT,");
-            stringBuffer.append(KEY_LIANXIANG + "TEXT);");
+            stringBuffer.append(KEY_WORD + " TEXT,");
+            stringBuffer.append(KEY_PINYIN + " TEXT,");
+            stringBuffer.append(KEY_FIRST_LETTER + " TEXT,");
+            stringBuffer.append(KEY_TONE + " TEXT,");
+            stringBuffer.append(KEY_TYPE + " TEXT,");
+            stringBuffer.append(KEY_CLASS_NUMBER + " INTEGER,");
+            stringBuffer.append(KEY_EXPLANE + " TEXT,");
+            stringBuffer.append(KEY_LIANXIANG + " TEXT);");
             try {
                 sqLiteDatabase.execSQL(stringBuffer.toString());
             }catch (SQLException e){
@@ -85,7 +84,7 @@ public class WordDBAdapter {
         contentValues.put(KEY_FIRST_LETTER, WordData.WORDS[index][4]);
         contentValues.put(KEY_TONE, WordData.WORDS[index][5]);
         contentValues.put(KEY_TYPE, WordData.WORDS[index][6]);
-        contentValues.put(KEY_CLASS_NUMBER, WordData.WORDS[index][7]);
+        contentValues.put(KEY_CLASS_NUMBER, Integer.valueOf(WordData.WORDS[index][7]));
         contentValues.put(KEY_EXPLANE, WordData.WORDS[index][8]);
         contentValues.put(KEY_LIANXIANG, "");
         return db.insert(DATABASE_TABLE, null, contentValues);
@@ -127,11 +126,21 @@ public class WordDBAdapter {
     }
 
     /**
+     * 精确查找
+     * @param string
+     * @return
+     */
+    public Cursor searchExact(String string){
+        return db.rawQuery("SELECT * FROM " + DATABASE_TABLE + " WHERE (" +
+        KEY_WORD + " = \'" + string + "\')", null);
+    }
+
+    /**
      * 模糊查询
      * @param string
      * @return
      */
-    public Cursor search(String string){
+    public Cursor searchFuzzy(String string){
         return db.rawQuery("SELECT * FROM " + DATABASE_TABLE + " WHERE (" +
                 KEY_WORD + " LIKE \'"+string+"\') OR (" +
                 KEY_PINYIN + " LIKE \'"+string+"\')", null);
@@ -146,7 +155,7 @@ public class WordDBAdapter {
         contentValues.put(KEY_FIRST_LETTER, WordData.WORDS[index][4]);
         contentValues.put(KEY_TONE, WordData.WORDS[index][5]);
         contentValues.put(KEY_TYPE, WordData.WORDS[index][6]);
-        contentValues.put(KEY_CLASS_NUMBER, WordData.WORDS[index][7]);
+        contentValues.put(KEY_CLASS_NUMBER, Integer.valueOf(WordData.WORDS[index][7]));
         contentValues.put(KEY_EXPLANE, WordData.WORDS[index][8]);
         contentValues.put(KEY_LIANXIANG, "");
         return db.update(DATABASE_TABLE, contentValues, KEY_ID+"=?", new String[]{index+""});

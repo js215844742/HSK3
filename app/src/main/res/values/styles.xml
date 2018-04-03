@@ -8,4 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MyDialogStyle" parent="@style/Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item><!--窗口背景色透明-->
+        <item name="android:windowFrame">@null</item><!--没有windowFrame框-->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item><!--悬浮-->
+        <item name="android:windowIsTranslucent">true</item><!--窗口半透明-->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item><!--窗口弹出效果-->
+        <item name="android:backgroundDimEnabled">true</item><!--背景模糊-->
+    </style>
 </resources>

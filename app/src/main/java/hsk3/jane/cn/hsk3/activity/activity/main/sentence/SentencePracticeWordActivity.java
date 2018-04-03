@@ -167,6 +167,17 @@ public class SentencePracticeWordActivity extends BaseActivity implements View.O
 //            ((TextView) view.findViewById(R.id.tv_pinyin)).setText(SentenceQuestionData.PINYINS[index][position][i]);
             ((TextView) view.findViewById(R.id.tv_pinyin)).setText("");
             ((TextView) view.findViewById(R.id.tv_hanzi)).setText(SentenceQuestionData.HANZIS[index][position][i]);
+            final int finalI = i;
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+//                    Intent intent = new Intent(SentencePracticeWordActivity.this, SentenceWordDetailActivity.class);
+//                    intent.putExtra("word", SentenceQuestionData.HANZIS[index][position][finalI]);
+//                    startActivity(intent);
+                    SentenceWordDetailDialogFragment fragment = SentenceWordDetailDialogFragment.newInstance(SentenceQuestionData.HANZIS[index][position][finalI]);
+                    fragment.show(getSupportFragmentManager(), SentenceQuestionData.HANZIS[index][position][finalI]);
+                }
+            });
             questionView.addView(view);
         }
     }
