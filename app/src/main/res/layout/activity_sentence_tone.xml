@@ -1,23 +1,23 @@
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <include android:id="@+id/view_head"
         layout="@layout/view_head" />
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/view_head">
-        <LinearLayout
+        android:orientation="vertical"
+        android:layout_below="@+id/view_head"
+        android:gravity="center">
+        <hsk3.jane.cn.hsk3.view.FluidLayout
+            android:id="@+id/view_fluid"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
-            <hsk3.jane.cn.hsk3.view.FluidLayout
-                android:id="@+id/view_fluid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </hsk3.jane.cn.hsk3.view.FluidLayout>
-        </LinearLayout>
-    </ScrollView>
+            android:layout_height="match_parent"
+            app:gravity="center">
+        </hsk3.jane.cn.hsk3.view.FluidLayout>
+    </LinearLayout>
+
 </RelativeLayout>

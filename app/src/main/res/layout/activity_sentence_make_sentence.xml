@@ -34,6 +34,7 @@
                 android:padding="@dimen/dp_10"
                 android:background="@color/white"/>
             <TextView
+                android:id="@+id/tv_position"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -74,29 +75,29 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="我的答案"
+                    android:text="我的答案："
                     android:textColor="@color/black_light"
-                    android:textSize="@dimen/sp_16"/>
+                    android:textSize="@dimen/sp_14"/>
                 <TextView
                     android:id="@+id/tv_my_answer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text=""
                     android:textColor="@color/black_light"
-                    android:textSize="@dimen/sp_16"/>
+                    android:textSize="@dimen/sp_18"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="句子评价"
+                    android:text="句子评价："
                     android:textColor="@color/black_light"
-                    android:textSize="@dimen/sp_16"/>
+                    android:textSize="@dimen/sp_14"/>
                 <TextView
                     android:id="@+id/tv_right_answer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text=""
                     android:textColor="@color/black_light"
-                    android:textSize="@dimen/sp_16"/>
+                    android:textSize="@dimen/sp_14"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
