@@ -54,7 +54,7 @@ public class QuestionFragment extends Fragment{
         adapter = new QuestionAdapter(getActivity(), arrayList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(adapter);
-        typeTv.setText(SentenceData.SYNTAX[index]);
+//        typeTv.setText(SentenceData.SYNTAX[index]);
 
         for (int i = 0; i < PINYINS[index].length; i++) {
             arrayList.add(new QuestionBean(PINYINS[index][i], HANZIS[index][i], RIGHTANSWERS[index][i]));

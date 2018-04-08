@@ -70,11 +70,12 @@ public class SentenceWordDetailDialogFragment extends DialogFragment {
             classNumberTv.setText("");
             lianxiangTv.setText("");
         }else{
+            cursor.moveToFirst();
             pinyinTv.setText(cursor.getString(cursor.getColumnIndex(WordDBAdapter.KEY_PINYIN)));
-            typeTv.setText(cursor.getString(cursor.getColumnIndex(WordDBAdapter.KEY_TYPE)));
-            explaneTv.setText(cursor.getString(cursor.getColumnIndex(WordDBAdapter.KEY_EXPLANE)));
-            classNumberTv.setText(cursor.getInt(cursor.getColumnIndex(WordDBAdapter.KEY_CLASS_NUMBER))+"");
-            lianxiangTv.setText(cursor.getString(cursor.getColumnIndex(WordDBAdapter.KEY_LIANXIANG)));
+            typeTv.setText("词性："+cursor.getString(cursor.getColumnIndex(WordDBAdapter.KEY_TYPE)));
+            explaneTv.setText("词义："+cursor.getString(cursor.getColumnIndex(WordDBAdapter.KEY_EXPLANE)));
+            classNumberTv.setText("课号："+cursor.getInt(cursor.getColumnIndex(WordDBAdapter.KEY_CLASS_NUMBER))+"");
+            lianxiangTv.setText("联想："+cursor.getString(cursor.getColumnIndex(WordDBAdapter.KEY_LIANXIANG)));
         }
     }
 }

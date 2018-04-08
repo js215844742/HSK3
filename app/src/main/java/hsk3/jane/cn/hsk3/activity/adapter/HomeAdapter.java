@@ -23,7 +23,7 @@ import hsk3.jane.cn.hsk3.utils.AndroidUtils;
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>{
     private Context context;
     private String [] arrayList = {"句子练习", "声调练习", "成语练习", "神话故事", "三字经"};
-
+    private String [] summaries = {"Sentence Pratice", "Other", "Other", "Other", "Other"};
     public HomeAdapter(Context context) {
         this.context = context;
     }
@@ -43,6 +43,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>{
             holder.view.setBackgroundResource(R.drawable.shape_bg_item_home_gray);
         }
         holder.nameTv.setText(arrayList[position]);
+        holder.summaryTv.setText(summaries[position]);
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,10 +64,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>{
     class ViewHolder extends RecyclerView.ViewHolder {
         private RelativeLayout view;
         private TextView nameTv;
+        private TextView summaryTv;
         public ViewHolder(View itemView) {
             super(itemView);
             view = itemView.findViewById(R.id.view);
             nameTv = itemView.findViewById(R.id.tv_name);
+            summaryTv = itemView.findViewById(R.id.tv_summary);
         }
     }
 }

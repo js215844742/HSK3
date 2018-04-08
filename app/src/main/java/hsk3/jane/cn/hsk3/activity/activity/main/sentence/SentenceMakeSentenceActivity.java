@@ -26,7 +26,8 @@ import hsk3.jane.cn.hsk3.view.FluidLayout;
  */
 
 public class SentenceMakeSentenceActivity extends BaseActivity implements View.OnClickListener {
-    private TextView syntaxTv, positionTv, myAnswerTv, rightAnswerTv;
+    private TextView positionTv, myAnswerTv, rightAnswerTv;
+    private LinearLayout syntaxView;
     private FluidLayout questionView;
     private EditText answerEdt;
     private Button seeAnswerBtn, redoBtn, nextBtn;
@@ -44,7 +45,7 @@ public class SentenceMakeSentenceActivity extends BaseActivity implements View.O
     private void initView() {
         setTitle("造句练习-句法"+ (index+1));
         initToolbar((Toolbar) findViewById(R.id.toolbar));
-        syntaxTv = findViewById(R.id.tv_syntax);
+        syntaxView = findViewById(R.id.view_syntax);
         positionTv = findViewById(R.id.tv_position);
         myAnswerTv = findViewById(R.id.tv_my_answer);
         rightAnswerTv = findViewById(R.id.tv_right_answer);
@@ -55,7 +56,12 @@ public class SentenceMakeSentenceActivity extends BaseActivity implements View.O
         nextBtn = findViewById(R.id.btn_next);
         answerView = findViewById(R.id.view_answer);
 
-        syntaxTv.setText(SentenceData.SYNTAX[index]);
+//        syntaxTv.setText(SentenceData.SYNTAX[index]);
+        for (int i = 0; i < SentenceData.SYNTAX[index].length; i++) {
+            TextView syntaxTv = new TextView(this);
+            syntaxTv.setText(SentenceData.SYNTAX[index][i]);
+            syntaxView.addView(syntaxTv);
+        }
         if (SentenceMakeSentenceData.HANZIS[index].length>0) {
             positionTv.setText("第" + (position + 1) + "题");
             answerView.setVisibility(View.GONE);

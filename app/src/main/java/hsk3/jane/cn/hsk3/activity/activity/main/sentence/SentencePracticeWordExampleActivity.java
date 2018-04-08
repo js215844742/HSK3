@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import hsk3.jane.cn.hsk3.R;
@@ -19,10 +21,8 @@ import hsk3.jane.cn.hsk3.utils.AudioUtils;
  */
 
 public class SentencePracticeWordExampleActivity extends BaseActivity implements View.OnClickListener {
-    private TextView syntaxTv, contextTv, translationTv, translateBtn;
-    private ImageView playImg;
+    private LinearLayout syntaxView, exampleView;
     private Button beginBtn;
-
     private int index;//句型序号
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,36 +35,70 @@ public class SentencePracticeWordExampleActivity extends BaseActivity implements
     private void initView() {
         setTitle("连词成句-句法"+ (index+1));
         initToolbar((Toolbar) findViewById(R.id.toolbar));
-        syntaxTv = findViewById(R.id.tv_syntax);
-        contextTv = findViewById(R.id.tv_context);
-        translationTv = findViewById(R.id.tv_translation);
-        translateBtn = findViewById(R.id.btn_translate);
-        playImg = findViewById(R.id.img_play);
+        syntaxView = findViewById(R.id.view_syntax);
+//        contextTv = findViewById(R.id.tv_context);
+//        translationTv = findViewById(R.id.tv_translation);
+//        translateBtn = findViewById(R.id.btn_translate);
         beginBtn = findViewById(R.id.btn_begin);
+        exampleView = findViewById(R.id.view_example);
+        initData();
 
-        syntaxTv.setText(SentenceData.SYNTAX[index]);
-        contextTv.setText(SentenceData.EXAMPLE[index]);
-        translationTv.setText(SentenceData.EXAMPLE_TRANSLATION[index]);
-
-        playImg.setOnClickListener(this);
-        translateBtn.setOnClickListener(this);
+//        translateBtn.setOnClickListener(this);
         beginBtn.setOnClickListener(this);
+    }
+
+    private void initData() {
+        for (int i = 0; i < SentenceData.SYNTAX[index].length; i++) {
+            TextView syntaxTv = new TextView(this);
+            syntaxTv.setText(SentenceData.SYNTAX[index][i]);
+            syntaxView.addView(syntaxTv);
+        }
+        for (int i = 0; i < SentenceData.EXAMPLE[index].length; i++) {
+            final View view = LayoutInflater.from(this).inflate(R.layout.view_sentence_example, null);
+            TextView lijuTv = view.findViewById(R.id.tv_liju);
+            final TextView contextTv = view.findViewById(R.id.tv_context);
+            ImageView playImg = view.findViewById(R.id.img_play);
+            final TextView translationTv = view.findViewById(R.id.tv_translation);;
+            TextView translateBtn = view.findViewById(R.id.btn_translate);;
+            contextTv.setText(SentenceData.EXAMPLE[index][i]);
+            translationTv.setText(SentenceData.EXAMPLE_TRANSLATION[index]);
+            lijuTv.setText("例句"+(i+1)+"：");
+            playImg.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AudioUtils.getInstance().init(SentencePracticeWordExampleActivity.this);
+                    AudioUtils.getInstance().speakText(contextTv.getText().toString());
+                }
+            });
+            translateBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (translationTv.getVisibility() == View.GONE){
+                        translationTv.setVisibility(View.VISIBLE);
+                    }else{
+                        translationTv.setVisibility(View.GONE);
+                    }
+                }
+            });
+            exampleView.addView(view);
+        }
+
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.img_play:
-                AudioUtils.getInstance().init(this);
-                AudioUtils.getInstance().speakText(contextTv.getText().toString());
-                break;
-            case R.id.btn_translate:
-                if (translationTv.getVisibility() == View.INVISIBLE){
-                    translationTv.setVisibility(View.VISIBLE);
-                }else{
-                    translationTv.setVisibility(View.INVISIBLE);
-                }
-                break;
+//            case R.id.img_play:
+//                AudioUtils.getInstance().init(this);
+//                AudioUtils.getInstance().speakText(contextTv.getText().toString());
+//                break;
+//            case R.id.btn_translate:
+//                if (translationTv.getVisibility() == View.INVISIBLE){
+//                    translationTv.setVisibility(View.VISIBLE);
+//                }else{
+//                    translationTv.setVisibility(View.INVISIBLE);
+//                }
+//                break;
             case R.id.btn_begin:
                 Intent intent = new Intent(SentencePracticeWordExampleActivity.this, SentencePracticeWordActivity.class);
                 intent.putExtra("index", index);

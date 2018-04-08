@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import hsk3.jane.cn.hsk3.R;
@@ -24,7 +25,8 @@ import hsk3.jane.cn.hsk3.utils.AudioUtils;
  */
 
 public class SentenceMoreSentenceActivity extends BaseActivity implements View.OnClickListener {
-    private TextView syntaxTv, contextTv, translationTv, translateBtn, positionTv;
+    private TextView contextTv, translationTv, translateBtn, positionTv;
+    private LinearLayout syntaxView;
     private ImageView playSlowImg, playNormalImg;
     private Button nextBtn;
 
@@ -40,7 +42,7 @@ public class SentenceMoreSentenceActivity extends BaseActivity implements View.O
     private void initView() {
         setTitle("句子练习-句法"+ (index+1));
         initToolbar((Toolbar) findViewById(R.id.toolbar));
-        syntaxTv = findViewById(R.id.tv_syntax);
+        syntaxView = findViewById(R.id.view_syntax);
         contextTv = findViewById(R.id.tv_context_hanzi);
         translationTv = findViewById(R.id.tv_translation);
         translateBtn = findViewById(R.id.btn_translate);
@@ -53,7 +55,13 @@ public class SentenceMoreSentenceActivity extends BaseActivity implements View.O
         playNormalImg.setOnClickListener(this);
         translateBtn.setOnClickListener(this);
         nextBtn.setOnClickListener(this);
-        syntaxTv.setText(SentenceData.SYNTAX[index]);
+
+//        syntaxTv.setText(SentenceData.SYNTAX[index]);
+        for (int i = 0; i < SentenceData.SYNTAX[index].length; i++) {
+            TextView syntaxTv = new TextView(this);
+            syntaxTv.setText(SentenceData.SYNTAX[index][i]);
+            syntaxView.addView(syntaxTv);
+        }
         initData();
     }
 

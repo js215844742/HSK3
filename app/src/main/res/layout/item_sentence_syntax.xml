@@ -10,13 +10,21 @@
         android:gravity="center"
         android:textSize="@dimen/sp_16"
         android:textColor="@color/green"/>
-    <TextView
-        android:id="@+id/tv_title"
+    <LinearLayout
+        android:id="@+id/view_title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:textColor="@color/black_light"
-        android:textSize="@dimen/sp_14"
+        android:orientation="vertical"
         android:padding="@dimen/dp_15"
-        android:layout_toRightOf="@+id/tv_index"/>
+        android:layout_toRightOf="@+id/tv_index">
+        <!--<TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textColor="@color/black_light"
+            android:textSize="@dimen/sp_14"
+            />-->
+    </LinearLayout>
+
 </RelativeLayout>
