@@ -9,41 +9,115 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/view_head"
         android:orientation="horizontal"
-        android:padding="@dimen/dp_10">
-        <ImageView
+        android:padding="@dimen/dp_20">
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="@dimen/dp_50"
-            android:src="@mipmap/img_running_man"
-            android:tint="@color/green"
-            android:layout_marginTop="@dimen/dp_210"/>
-        <ImageView
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@mipmap/img_running_man"
+                android:tint="@color/green"
+                android:scaleType="fitEnd"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="@dimen/dp_50"
-            android:src="@mipmap/img_running_man"
-            android:tint="@color/gray"
-            android:layout_marginTop="@dimen/dp_160"/>
-        <ImageView
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@mipmap/img_running_man"
+                android:tint="@color/gray"
+                android:scaleType="fitEnd"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/gray_light"/>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="@dimen/dp_50"
-            android:src="@mipmap/img_running_man"
-            android:tint="@color/gray"
-            android:layout_marginTop="@dimen/dp_110"/>
-        <ImageView
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@mipmap/img_running_man"
+                android:tint="@color/gray"
+                android:scaleType="fitEnd"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:background="@color/gray_light" />
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="@dimen/dp_50"
-            android:src="@mipmap/img_running_man"
-            android:tint="@color/gray"
-            android:layout_marginTop="@dimen/dp_60"/>
-        <ImageView
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@mipmap/img_running_man"
+                android:tint="@color/gray"
+                android:scaleType="fitEnd"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:background="@color/gray_light"/>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="@dimen/dp_50"
-            android:src="@mipmap/img_top"
-            android:tint="@color/orange"
-            android:layout_marginTop="@dimen/dp_10"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:src="@mipmap/img_top"
+                android:tint="@color/orange"
+                android:scaleType="fitEnd"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:background="@color/gray_light" />
+        </LinearLayout>
     </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_20"
+        android:background="@color/gray_light"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"/>
 </RelativeLayout>

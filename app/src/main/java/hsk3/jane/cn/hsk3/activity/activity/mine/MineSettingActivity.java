@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import hsk3.jane.cn.hsk3.R;
 import hsk3.jane.cn.hsk3.base.BaseActivity;
+import hsk3.jane.cn.hsk3.base.MyActivityManager;
 import hsk3.jane.cn.hsk3.base.MyApplication;
 import hsk3.jane.cn.hsk3.data.WordData;
 import hsk3.jane.cn.hsk3.db.WordDBAdapter;
@@ -48,6 +49,7 @@ public class MineSettingActivity extends BaseActivity {
                 AndroidUtils.startActivity(this, MineSettingThemeActivity.class, true);
                 break;
             case R.id.btn_exit:
+                MyActivityManager.clearActivities();
                 break;
         }
     }

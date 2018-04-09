@@ -31,7 +31,7 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="@dimen/dp_30"
-                android:text="12131313131"/>
+                android:text="215844742"/>
             <ImageView
                 android:layout_width="@dimen/dp_15"
                 android:layout_height="@dimen/dp_21"
@@ -60,7 +60,7 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="@dimen/dp_30"
-                android:text="13124242423"/>
+                android:text="215844742"/>
             <ImageView
                 android:layout_width="@dimen/dp_15"
                 android:layout_height="@dimen/dp_21"
@@ -89,7 +89,7 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="@dimen/dp_30"
-                android:text="13345"/>
+                android:text="215844742@qq.com"/>
             <ImageView
                 android:layout_width="@dimen/dp_15"
                 android:layout_height="@dimen/dp_21"
@@ -113,12 +113,14 @@
                 android:layout_centerVertical="true"
                 android:textColor="@color/black_light"/>
             <TextView
+                android:id="@+id/tv_tel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="@dimen/dp_30"
-                android:text="12345674319"/>
+                android:textColor="@color/blue"
+                android:text="18368819477"/>
             <ImageView
                 android:layout_width="@dimen/dp_15"
                 android:layout_height="@dimen/dp_21"

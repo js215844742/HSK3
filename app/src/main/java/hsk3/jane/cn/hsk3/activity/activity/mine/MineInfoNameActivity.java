@@ -31,6 +31,7 @@ public class MineInfoNameActivity extends BaseActivity {
         initToolbar((Toolbar)findViewById(R.id.toolbar));
         saveTv = findViewById(R.id.tv_right);
         nameEdt = findViewById(R.id.edt_name);
+        nameEdt.setText(SpUtils.getStringPreference(MySpKey.SP_USER_NAME_KEY));
         saveTv.setText("保存");
         saveTv.setOnClickListener(new View.OnClickListener() {
             @Override

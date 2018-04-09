@@ -10,6 +10,7 @@ import hsk3.jane.cn.hsk3.R;
 import hsk3.jane.cn.hsk3.activity.fragment.HomeFragment;
 import hsk3.jane.cn.hsk3.activity.fragment.MineFragment;
 import hsk3.jane.cn.hsk3.base.BaseActivity;
+import hsk3.jane.cn.hsk3.base.MyActivityManager;
 import hsk3.jane.cn.hsk3.utils.AndroidUtils;
 import hsk3.jane.cn.hsk3.view.BottomNavigationViewEx;
 
@@ -62,7 +63,7 @@ public class MainActivity extends BaseActivity {
                 AndroidUtils.Toast(this, "再点一次退出");
                 exitTime0 = System.currentTimeMillis();
             } else if (System.currentTimeMillis() - exitTime1 > 1000) {
-                finish();
+                MyActivityManager.clearActivities();
             }
             return false;
         }

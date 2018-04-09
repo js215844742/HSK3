@@ -5,8 +5,11 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 
 import hsk3.jane.cn.hsk3.R;
+import hsk3.jane.cn.hsk3.activity.activity.main.MainActivity;
 import hsk3.jane.cn.hsk3.base.BaseActivity;
+import hsk3.jane.cn.hsk3.base.MySpKey;
 import hsk3.jane.cn.hsk3.utils.AndroidUtils;
+import hsk3.jane.cn.hsk3.utils.SpUtils;
 
 /**
  * Created by Jane on 2018/3/7.
@@ -24,7 +27,11 @@ public class WelcomeActivity extends BaseActivity{
     Runnable runnable = new Runnable() {
         @Override
         public void run() {
-            AndroidUtils.startActivity(WelcomeActivity.this,FixNameActivity.class,true);
+            if (SpUtils.getStringPreference(MySpKey.SP_USER_NAME_KEY).length()>0) {
+                AndroidUtils.startActivity(WelcomeActivity.this, MainActivity.class, true);
+            }else{
+                AndroidUtils.startActivity(WelcomeActivity.this, FixNameActivity.class, true);
+            }
             finish();
         }
     };

@@ -61,9 +61,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         aboutView = view.findViewById(R.id.view_about);
         helpView = view.findViewById(R.id.view_help);
         settingView = view.findViewById(R.id.view_setting);
-        Glide.with(this).load(R.mipmap.img_fix_name).transform(new GlideCircleTransform(getActivity())).into(headImg);
-        nameTv.setText(SpUtils.getStringPreference(MySpKey.SP_USER_NAME_KEY));
-        genderTv.setText(SpUtils.getIntPreference(MySpKey.SP_USER_GENDER_KEY)==1?"先生":"女士");
+
         infoView.setOnClickListener(this);
         stageView.setOnClickListener(this);
         aboutView.setOnClickListener(this);
@@ -90,5 +88,13 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 AndroidUtils.startActivity(getActivity(), MineSettingActivity.class, true);
                 break;
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Glide.with(this).load(R.mipmap.img_fix_name).transform(new GlideCircleTransform(getActivity())).into(headImg);
+        nameTv.setText(SpUtils.getStringPreference(MySpKey.SP_USER_NAME_KEY));
+        genderTv.setText(SpUtils.getIntPreference(MySpKey.SP_USER_GENDER_KEY)==1?"先生":"女士");
     }
 }
