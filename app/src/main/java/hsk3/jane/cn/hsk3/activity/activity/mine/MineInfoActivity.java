@@ -8,13 +8,17 @@ import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import hsk3.jane.cn.hsk3.R;
 import hsk3.jane.cn.hsk3.base.BaseActivity;
 import hsk3.jane.cn.hsk3.base.MySpKey;
 import hsk3.jane.cn.hsk3.utils.AndroidUtils;
 import hsk3.jane.cn.hsk3.utils.SpUtils;
+import hsk3.jane.cn.hsk3.view.GlideCircleTransform;
 
 /**
  * 个人中心*个人信息
@@ -23,6 +27,7 @@ import hsk3.jane.cn.hsk3.utils.SpUtils;
 
 public class MineInfoActivity extends BaseActivity {
     private TextView nameTv, genderTv;
+    private ImageView headImg;
     private int CODE_PHOTO_CAMERA = 11;
     private int CODE_PHOTO_PICK = 22;
     private int CODE_PHOTO_CUT = 33;
@@ -39,6 +44,8 @@ public class MineInfoActivity extends BaseActivity {
         initToolbar((Toolbar)findViewById(R.id.toolbar));
         nameTv = findViewById(R.id.tv_name);
         genderTv = findViewById(R.id.tv_gender);
+        headImg = findViewById(R.id.img_head);
+        Glide.with(this).load(R.mipmap.img_fix_name).transform(new GlideCircleTransform(this)).into(headImg);
     }
 
     public void onStart(View view){
@@ -51,7 +58,6 @@ public class MineInfoActivity extends BaseActivity {
                 AndroidUtils.startActivity(this, MineInfoNameActivity.class, true);
                 break;
             case R.id.view_gender:
-//                AndroidUtils.Toast(this, "选择性别");
                 showGenderDialog();
                 break;
         }

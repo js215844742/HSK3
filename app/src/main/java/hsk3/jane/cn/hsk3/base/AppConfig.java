@@ -9,7 +9,7 @@ import java.io.File;
  */
 
 public class AppConfig {
-    public static final String BASE_PACKAGE = "com.jane.hsk3";
+    public static final String BASE_PACKAGE = "hsk3.jane.cn.hsk3";
     public static final String APP_PACKAGE_NAME = "hsk";
     public static final String APP_SHORT_NAME = "hsk3";
 

@@ -12,7 +12,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+
+import com.gjiazhe.wavesidebar.WaveSideBar;
 
 import java.util.ArrayList;
 
@@ -33,7 +36,9 @@ public class MineSettingWordsActivity extends BaseActivity {
     WordDBAdapter dbAdapter;
     Cursor cursor;
     Toolbar toolbar;
+    private LinearLayout topView;
     private RecyclerView recyclerView;
+    private WaveSideBar sideBar;
     private ArrayList<Word> arrayList;
     private WordsAdapter adapter;
     private RelativeLayout noDataView;
@@ -49,8 +54,10 @@ public class MineSettingWordsActivity extends BaseActivity {
     private void initView() {
         setTitle("词库");
         toolbar = findViewById(R.id.toolbar);
+        topView = findViewById(R.id.view_top);
         recyclerView = findViewById(R.id.recyclerView);
         noDataView = findViewById(R.id.view_no_data);
+        sideBar = findViewById(R.id.sideBar);
         arrayList = new ArrayList<>();
         adapter = new WordsAdapter(this, arrayList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -73,6 +80,18 @@ public class MineSettingWordsActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 initWords();
+            }
+        });
+        sideBar.setOnSelectIndexItemListener(new WaveSideBar.OnSelectIndexItemListener() {
+            @Override
+            public void onSelectIndexItem(String index) {
+                for (int i = 0; i < arrayList.size(); i++) {
+                    if (index.equals(arrayList.get(i).getFirstLetter())) {
+//                        recyclerView.scrollToPosition(i);
+                        ((LinearLayoutManager) recyclerView.getLayoutManager()).scrollToPositionWithOffset(i, 0);
+                        return;
+                    }
+                }
             }
         });
     }
