@@ -111,12 +111,13 @@ public class SentenceToneActivity extends BaseActivity implements View.OnClickLi
                 GestureOverlayView gestureView = view.findViewById(R.id.view_gesture);
                 final ImageView toneImg = view.findViewById(R.id.img_tone);
                 if (!seeAnswer) {
+                    Glide.with(SentenceToneActivity.this).load(0).into(toneImg);
                     gestureView.setVisibility(View.VISIBLE);
                     gestureView.addOnGesturePerformedListener(new GestureOverlayView.OnGesturePerformedListener() {
                         @Override
                         public void onGesturePerformed(GestureOverlayView gestureOverlayView, Gesture gesture) {
                             ArrayList<Prediction> predictions = gLib.recognize(gesture);
-                            if (predictions.size() > 0 && predictions.get(0).score > 8.0) {
+                            if (predictions.size() > 0 && predictions.get(0).score > 7.0) {
                                 String result = predictions.get(0).name;
                                 if (result.equals("0")) {
                                     Glide.with(SentenceToneActivity.this).load(0).into(toneImg);
@@ -131,6 +132,8 @@ public class SentenceToneActivity extends BaseActivity implements View.OnClickLi
                                 } else {
                                     AndroidUtils.Toast(SentenceToneActivity.this, "未识别");
                                 }
+                            }else {
+                                AndroidUtils.Toast(SentenceToneActivity.this, "未识别");
                             }
                         }
                     });

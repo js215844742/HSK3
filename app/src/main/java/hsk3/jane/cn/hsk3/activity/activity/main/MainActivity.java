@@ -11,18 +11,22 @@ import hsk3.jane.cn.hsk3.activity.fragment.HomeFragment;
 import hsk3.jane.cn.hsk3.activity.fragment.MineFragment;
 import hsk3.jane.cn.hsk3.base.BaseActivity;
 import hsk3.jane.cn.hsk3.base.MyActivityManager;
+import hsk3.jane.cn.hsk3.base.MySpKey;
 import hsk3.jane.cn.hsk3.utils.AndroidUtils;
+import hsk3.jane.cn.hsk3.utils.SpUtils;
 import hsk3.jane.cn.hsk3.view.BottomNavigationViewEx;
 
 public class MainActivity extends BaseActivity {
     BottomNavigationViewEx bottomNavigationView;
     HomeFragment homeFragment;
     MineFragment mineFragment;
-
+    private int [] menus = {R.menu.menu_bottom_navigation, R.menu.menu_bottom_navigation_1};
+    private int theme;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         initView();
         initListener();
     }
@@ -68,5 +72,13 @@ public class MainActivity extends BaseActivity {
             return false;
         }
         return false;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        theme = SpUtils.getIntPreference(MySpKey.SP_SETTING_THEME_KEY, 0);
+//        bottomNavigationView.getMenu().clear();
+//        bottomNavigationView.inflateMenu(menus[theme]);
     }
 }

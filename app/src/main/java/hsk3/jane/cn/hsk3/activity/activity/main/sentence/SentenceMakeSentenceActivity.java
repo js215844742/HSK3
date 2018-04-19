@@ -82,12 +82,16 @@ public class SentenceMakeSentenceActivity extends BaseActivity implements View.O
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btn_see_answer:
-                answerEdt.setVisibility(View.GONE);
-                answerView.setVisibility(View.VISIBLE);
-                seeAnswerBtn.setVisibility(View.GONE);
-                redoBtn.setVisibility(View.VISIBLE);
-                nextBtn.setVisibility(View.VISIBLE);
-                checkAnswer();
+                if (checkEdit()) {
+                    answerEdt.setVisibility(View.GONE);
+                    answerView.setVisibility(View.VISIBLE);
+                    seeAnswerBtn.setVisibility(View.GONE);
+                    redoBtn.setVisibility(View.VISIBLE);
+                    nextBtn.setVisibility(View.VISIBLE);
+                    checkAnswer();
+                }else{
+                    AndroidUtils.Toast(this, "请使用给出的词语造句");
+                }
                 break;
             case R.id.btn_redo:
                 answerEdt.setText("");
@@ -155,6 +159,15 @@ public class SentenceMakeSentenceActivity extends BaseActivity implements View.O
         builder.show();
     }
 
+    private boolean checkEdit(){
+        String myAnswer = answerEdt.getText().toString();
+        for (int i = 0; i < SentenceMakeSentenceData.HANZIS[index][position].length; i++) {
+            if (!myAnswer.contains(SentenceMakeSentenceData.HANZIS[index][position][i])) {
+                return false;
+            }
+        }
+        return true;
+    }
     private void checkAnswer(){
         String myAnswer = answerEdt.getText().toString();
         myAnswerTv.setText(myAnswer);

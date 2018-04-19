@@ -31,9 +31,11 @@
         <activity android:name=".activity.activity.main.sentence.SentenceStyleActivity" />
         <activity android:name=".activity.activity.main.sentence.SentenceChooseSyntaxActivity" />
         <activity android:name=".activity.activity.main.sentence.SentencePracticeWordExampleActivity" />
-        <activity android:name=".activity.activity.main.sentence.SentencePracticeWordActivity" />
+        <activity android:name=".activity.activity.main.sentence.SentencePracticeWordActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
         <activity android:name=".activity.activity.main.sentence.SentenceMoreSentenceActivity" />
-        <activity android:name=".activity.activity.main.sentence.SentenceMakeSentenceActivity" />
+        <activity android:name=".activity.activity.main.sentence.SentenceMakeSentenceActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
         <activity android:name=".activity.activity.main.sentence.SentenceToneActivity" />
         <activity android:name=".activity.activity.main.sentence.SentenceWordDetailActivity"
             android:theme="@style/MyDialogStyle"/>
@@ -49,6 +51,7 @@
         <activity android:name=".activity.activity.mine.MineHelpFeedbackActivity" />
         <activity android:name=".activity.activity.mine.MineSettingWordsActivity" />
         <activity android:name=".activity.activity.mine.MineSettingThemeActivity" />
+        <activity android:name=".activity.activity.mine.MineSettingThemeDetailActivity" />
         <activity android:name=".activity.activity.mine.MineAboutAgreementActivity" />
     </application>
 </manifest>

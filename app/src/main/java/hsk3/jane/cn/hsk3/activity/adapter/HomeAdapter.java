@@ -38,7 +38,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         if (position==0) {
-            holder.view.setBackgroundResource(R.drawable.shape_bg_item_home_violet);
+            holder.view.setBackgroundResource(R.drawable.shape_bg_item_home_green);
         }else {
             holder.view.setBackgroundResource(R.drawable.shape_bg_item_home_gray);
         }

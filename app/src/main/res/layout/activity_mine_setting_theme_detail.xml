@@ -1,0 +1,24 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <include
+        android:id="@+id/view_head"
+        layout="@layout/view_head" />
+    <ImageView
+        android:id="@+id/img_theme"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_head"
+        android:src="@mipmap/head_1"/>
+    <Button
+        android:id="@+id/btn_use"
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="@dimen/dp_40"
+        android:text="使用"
+        android:textColor="@color/green"
+        android:background="@drawable/shape_circle_green"
+        android:layout_margin="@dimen/dp_10"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

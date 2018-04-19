@@ -15,4 +15,9 @@ public class MySpKey {
     public static String SP_USER_GENDER_KEY = "sp_user_gender_key";
     /** 手机号码 */
     public static String SP_USER_PHONE_KEY = "sp_user_phone_key";
+    /** 头像序号 */
+    public static String SP_USER_HEAD_NUM_KEY = "sp_user_head_num_key";
+
+    /** 主题序号 */
+    public static String SP_SETTING_THEME_KEY = "sp_setting_theme_key";
 }

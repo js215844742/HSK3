@@ -45,6 +45,7 @@
                 android:layout_marginTop="@dimen/dp_100"
                 android:layout_marginLeft="@dimen/dp_20"
                 android:layout_marginRight="@dimen/dp_20"
+                android:singleLine="true"
                 android:background="@drawable/shape_bg_edit_answer"
                 android:hint="请输入答案"
                 android:textColor="@color/black_light"

@@ -33,7 +33,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     private TextView nameTv, genderTv;
     private RelativeLayout infoView;
     private LinearLayout stageView, aboutView, helpView, settingView;
-
+    private int [] heads = {R.mipmap.head_1,R.mipmap.head_2,R.mipmap.head_3,R.mipmap.head_4};
     public static MineFragment newInstance(){
 //        Bundle bundle = new Bundle();
 //        bundle.putInt("", 0);
@@ -93,7 +93,8 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onResume() {
         super.onResume();
-        Glide.with(this).load(R.mipmap.img_fix_name).transform(new GlideCircleTransform(getActivity())).into(headImg);
+
+        Glide.with(this).load(heads[SpUtils.getIntPreference(MySpKey.SP_USER_HEAD_NUM_KEY, 1)-1]).transform(new GlideCircleTransform(getActivity())).into(headImg);
         nameTv.setText(SpUtils.getStringPreference(MySpKey.SP_USER_NAME_KEY));
         genderTv.setText(SpUtils.getIntPreference(MySpKey.SP_USER_GENDER_KEY)==1?"先生":"女士");
     }
