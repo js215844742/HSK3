@@ -3,12 +3,6 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView
-        android:id="@+id/img_face"
-        android:layout_width="@dimen/dp_100"
-        android:layout_height="@dimen/dp_100"
-        android:src="@mipmap/img_face_smail"
-        android:layout_margin="@dimen/dp_20"/>
     <TextView
         android:id="@+id/tv_tip"
         android:layout_width="wrap_content"
@@ -21,19 +15,9 @@
         android:layout_width="@dimen/dp_150"
         android:layout_height="@dimen/dp_45"
         android:textColor="@color/white"
-        android:background="@drawable/shape_bg_item_home_green"
-        android:textSize="@dimen/sp_16"
-        android:text="更多句子练习"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/dp_20"/>
-    <Button
-        android:id="@+id/btn_2"
-        android:layout_width="@dimen/dp_150"
-        android:layout_height="@dimen/dp_45"
-        android:textColor="@color/white"
         android:background="@drawable/shape_bg_item_home_orange"
         android:textSize="@dimen/sp_16"
-        android:text="返回  BACK"
+        android:text="确定  OK"
         android:textStyle="bold"
         android:layout_margin="@dimen/dp_20"/>
 </LinearLayout>

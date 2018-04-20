@@ -1,6 +1,16 @@
 <resources>
     <string name="app_name">学汉语</string>
     <string name="app_instruction">本产品是针对汉语水平考试中的连词成句模块而特别设计的。</string>
+    <string name="tone_help">
+        1.请在对应的字上面写出对应的音调；\n
+        2.手势提示：\n
+            &#xA0;&#xA0;1)轻声：请写数字0，需逆时针输入；\n
+            &#xA0;&#xA0;2)第一声：请写数字1,或汉字“一”；\n
+            &#xA0;&#xA0;3)第二声：请写数字2；\n
+            &#xA0;&#xA0;4)第三声：请写数字3；\n
+            &#xA0;&#xA0;5)第四声：请写数字4；\n
+        3.输入手势过程中请不要断笔，如果手势有多个笔画，需要连笔输入；\n
+        4.输入手势时请尽量工整，以提高识别率。</string>
     <string name="mine_help_instruction">
         1.首次登录时需要登记姓名和性别，以后再打开直接跳转主界面。\n
         \n

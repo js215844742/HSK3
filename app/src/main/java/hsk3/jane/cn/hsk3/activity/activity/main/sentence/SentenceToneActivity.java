@@ -11,6 +11,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -36,9 +37,12 @@ import hsk3.jane.cn.hsk3.view.FluidLayout;
 public class SentenceToneActivity extends BaseActivity implements View.OnClickListener {
     private GestureLibrary gLib;
     private FluidLayout fluidLayout;
+    private Toolbar toolbar;
     private int index;//句型序号
     private int position = 0;//当前序号
     private Button seeAnswerBtn, redoBtn, nextBtn;
+    private int [] toneImgs = {R.mipmap.img_tone_1,R.mipmap.img_tone_2,R.mipmap.img_tone_3,R.mipmap.img_tone_4};
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +55,8 @@ public class SentenceToneActivity extends BaseActivity implements View.OnClickLi
 
     private void initView() {
         setTitle("声调练习-句法"+ (index+1));
-        initToolbar((Toolbar) findViewById(R.id.toolbar));
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        initToolbar(toolbar);
         fluidLayout = findViewById(R.id.view_fluid);
 
         seeAnswerBtn = findViewById(R.id.btn_see_answer);
@@ -62,6 +67,18 @@ public class SentenceToneActivity extends BaseActivity implements View.OnClickLi
         redoBtn.setOnClickListener(this);
         nextBtn.setOnClickListener(this);
         initData(false);
+        toolbar.inflateMenu(R.menu.menu_tone_help);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.help:
+                        showHelpDiaolog();
+                        break;
+                }
+                return false;
+            }
+        });
     }
 
     @Override
@@ -80,7 +97,7 @@ public class SentenceToneActivity extends BaseActivity implements View.OnClickLi
                 initData(false);
                 break;
             case R.id.btn_next:
-                if (position< SentenceToneData.HANZIS[index].length-1) {
+                if (position< SentenceToneData.TONES[index].length-1) {
                     position++;
                     seeAnswerBtn.setVisibility(View.VISIBLE);
                     redoBtn.setVisibility(View.GONE);
@@ -100,7 +117,8 @@ public class SentenceToneActivity extends BaseActivity implements View.OnClickLi
 
     private void initData(boolean seeAnswer) {
         fluidLayout.removeAllViews();
-        String strings [] = SentenceToneData.HANZIS[index][position].split("");
+        String strings [] = SentenceToneData.TONES[index][position][0].split("");
+        String[] tones = SentenceToneData.TONES[index][position][2].split(",");
         for (int i = 0; i < strings.length; i++) {
             String string = strings[i];
             if (string.length()>0) {
@@ -117,18 +135,18 @@ public class SentenceToneActivity extends BaseActivity implements View.OnClickLi
                         @Override
                         public void onGesturePerformed(GestureOverlayView gestureOverlayView, Gesture gesture) {
                             ArrayList<Prediction> predictions = gLib.recognize(gesture);
-                            if (predictions.size() > 0 && predictions.get(0).score > 7.0) {
+                            if (predictions.size() > 0 && predictions.get(0).score > 1.0) {
                                 String result = predictions.get(0).name;
                                 if (result.equals("0")) {
                                     Glide.with(SentenceToneActivity.this).load(0).into(toneImg);
                                 } else if (result.equals("1")) {
-                                    Glide.with(SentenceToneActivity.this).load(R.mipmap.img_tone_1).into(toneImg);
+                                    Glide.with(SentenceToneActivity.this).load(toneImgs[0]).into(toneImg);
                                 } else if (result.equals("2")) {
-                                    Glide.with(SentenceToneActivity.this).load(R.mipmap.img_tone_2).into(toneImg);
+                                    Glide.with(SentenceToneActivity.this).load(toneImgs[1]).into(toneImg);
                                 } else if (result.equals("3")) {
-                                    Glide.with(SentenceToneActivity.this).load(R.mipmap.img_tone_3).into(toneImg);
+                                    Glide.with(SentenceToneActivity.this).load(toneImgs[2]).into(toneImg);
                                 } else if (result.equals("4")) {
-                                    Glide.with(SentenceToneActivity.this).load(R.mipmap.img_tone_4).into(toneImg);
+                                    Glide.with(SentenceToneActivity.this).load(toneImgs[3]).into(toneImg);
                                 } else {
                                     AndroidUtils.Toast(SentenceToneActivity.this, "未识别");
                                 }
@@ -139,6 +157,22 @@ public class SentenceToneActivity extends BaseActivity implements View.OnClickLi
                     });
                 }else{
                     gestureView.setVisibility(View.INVISIBLE);
+                    if (i-1<tones.length) {
+                        String tone = tones[i-1];
+                        if (tone.equals("0")) {
+                            Glide.with(SentenceToneActivity.this).load(0).into(toneImg);
+                        } else if (tone.equals("1")) {
+                            Glide.with(SentenceToneActivity.this).load(toneImgs[0]).into(toneImg);
+                        } else if (tone.equals("2")) {
+                            Glide.with(SentenceToneActivity.this).load(toneImgs[1]).into(toneImg);
+                        } else if (tone.equals("3")) {
+                            Glide.with(SentenceToneActivity.this).load(toneImgs[2]).into(toneImg);
+                        } else if (tone.equals("4")) {
+                            Glide.with(SentenceToneActivity.this).load(toneImgs[3]).into(toneImg);
+                        } else {
+                            Glide.with(SentenceToneActivity.this).load(0).into(toneImg);
+                        }
+                    }
                 }
                 fluidLayout.addView(view);
             }
@@ -159,6 +193,15 @@ public class SentenceToneActivity extends BaseActivity implements View.OnClickLi
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
         builder.setView(view);
+        builder.setCancelable(false);
+        builder.show();
+    }
+
+    private void showHelpDiaolog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("帮助  TIPS");
+        builder.setMessage(R.string.tone_help);
+        builder.setPositiveButton("确定  OK", null);
         builder.setCancelable(false);
         builder.show();
     }
