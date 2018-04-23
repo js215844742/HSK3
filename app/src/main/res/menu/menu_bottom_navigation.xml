@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/work"
         android:icon="@mipmap/img_main"
-        android:title="首页" />
+        android:title="首页 MAIN" />
     <item android:id="@+id/mine"
         android:icon="@mipmap/img_mine"
-        android:title="我"/>
+        android:title="我 MINE"/>
 </menu>

@@ -1,5 +1,6 @@
 package hsk3.jane.cn.hsk3.activity.activity.main;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
@@ -11,8 +12,12 @@ import hsk3.jane.cn.hsk3.activity.fragment.HomeFragment;
 import hsk3.jane.cn.hsk3.activity.fragment.MineFragment;
 import hsk3.jane.cn.hsk3.base.BaseActivity;
 import hsk3.jane.cn.hsk3.base.MyActivityManager;
+import hsk3.jane.cn.hsk3.base.MyApplication;
 import hsk3.jane.cn.hsk3.base.MySpKey;
+import hsk3.jane.cn.hsk3.data.WordData;
+import hsk3.jane.cn.hsk3.db.WordDBAdapter;
 import hsk3.jane.cn.hsk3.utils.AndroidUtils;
+import hsk3.jane.cn.hsk3.utils.DialogUtils;
 import hsk3.jane.cn.hsk3.utils.SpUtils;
 import hsk3.jane.cn.hsk3.view.BottomNavigationViewEx;
 
@@ -22,13 +27,16 @@ public class MainActivity extends BaseActivity {
     MineFragment mineFragment;
     private int [] menus = {R.menu.menu_bottom_navigation, R.menu.menu_bottom_navigation_1};
     private int theme;
+
+    WordDBAdapter dbAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        dbAdapter = ((MyApplication)getApplication()).getDbAdapter();
         initView();
         initListener();
+        initWords();
     }
 
     private void initListener() {
@@ -74,6 +82,18 @@ public class MainActivity extends BaseActivity {
         return false;
     }
 
+    private void initWords(){
+        Cursor cursor = dbAdapter.getAllByLetter();
+        if (cursor.getCount()>0) {
+            DialogUtils.showProgressDialog(this);
+            for (int i = 0; i < WordData.WORDS.length; i++) {
+                if (!dbAdapter.isExist(i)) {
+                    dbAdapter.insert(i);
+                }
+            }
+            DialogUtils.cancelProgressDialog();
+        }
+    }
     @Override
     protected void onResume() {
         super.onResume();
