@@ -23,4 +23,17 @@ public class Utils {
         }
         return title;
     }
+
+    /**
+     * 造句练习，句子评价
+     * @return
+     * @param myAnswer
+     * @param syntax
+     */
+    public static String getEvaluate(String myAnswer, String[] syntax){
+        int index = 1;
+        myAnswer.substring(0, index);
+
+        return "暂无评价。";
+    }
 }

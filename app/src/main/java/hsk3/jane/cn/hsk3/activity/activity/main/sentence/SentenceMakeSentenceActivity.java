@@ -18,6 +18,7 @@ import hsk3.jane.cn.hsk3.base.BaseActivity;
 import hsk3.jane.cn.hsk3.data.SentenceData;
 import hsk3.jane.cn.hsk3.data.SentenceMakeSentenceData;
 import hsk3.jane.cn.hsk3.utils.AndroidUtils;
+import hsk3.jane.cn.hsk3.utils.Utils;
 import hsk3.jane.cn.hsk3.view.FluidLayout;
 
 /**
@@ -172,7 +173,7 @@ public class SentenceMakeSentenceActivity extends BaseActivity implements View.O
         String myAnswer = answerEdt.getText().toString();
         myAnswerTv.setText(myAnswer);
         //TODO 造句匹配
-        rightAnswerTv.setText("暂无评价");
+        rightAnswerTv.setText(Utils.getEvaluate(myAnswer, SentenceData.SYNTAX[index]));
         rightAnswerTv.setTextColor(getResources().getColor(R.color.red));
 //        if (myAnswer.equals(SentenceMakeSentenceData.RIGHTANSWERS[index][position])){
 //            myAnswerTv.setTextColor(getResources().getColor(R.color.green));
