@@ -28,7 +28,11 @@ public class SyntaxAdapter extends BaseAdapter{
 
     @Override
     public int getCount() {
-        return SentenceData.SYNTAX.length;
+        if (SentenceData.SYNTAX.length<10) {
+            return SentenceData.SYNTAX.length;
+        }else{
+            return 10;
+        }
     }
 
     @Override

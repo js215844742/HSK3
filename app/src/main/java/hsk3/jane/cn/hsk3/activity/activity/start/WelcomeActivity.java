@@ -22,7 +22,7 @@ public class WelcomeActivity extends BaseActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         handler = new Handler();
-        handler.postDelayed(runnable,1000);
+        handler.postDelayed(runnable,3000);
     }
     Runnable runnable = new Runnable() {
         @Override

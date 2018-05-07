@@ -99,6 +99,15 @@ public class WordDBAdapter {
         return false;
     }
 
+    public boolean isExist(String word){
+        Cursor cursor = db.rawQuery("SELECT " + KEY_ID + " FROM " + DATABASE_TABLE +" WHERE "+ KEY_WORD +" = \'" + word + "\'", null);
+        if (cursor.getCount()>0){
+            cursor.close();
+            return true;
+        }
+        return false;
+    }
+
     public Cursor getAll(){
         return db.rawQuery("SELECT * FROM " + DATABASE_TABLE, null);
     }

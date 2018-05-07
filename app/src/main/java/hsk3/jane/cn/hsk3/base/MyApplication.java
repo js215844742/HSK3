@@ -12,7 +12,7 @@ import hsk3.jane.cn.hsk3.db.WordDBAdapter;
  */
 
 public class MyApplication extends Application {
-    WordDBAdapter dbAdapter;
+    private static WordDBAdapter dbAdapter;
     private static Context mContext;
     public static Context getContext(){
         return mContext;
@@ -29,7 +29,7 @@ public class MyApplication extends Application {
         }
     }
 
-    public WordDBAdapter getDbAdapter(){
+    public static WordDBAdapter getDbAdapter(){
         if (dbAdapter == null){
             dbAdapter = new WordDBAdapter(mContext);
             dbAdapter.open();

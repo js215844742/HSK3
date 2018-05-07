@@ -86,6 +86,6 @@ public class DialogUtils {
             public void run() {
                 builder.cancel();
             }
-        }, 1000);
+        }, 2000);
     }
 }
