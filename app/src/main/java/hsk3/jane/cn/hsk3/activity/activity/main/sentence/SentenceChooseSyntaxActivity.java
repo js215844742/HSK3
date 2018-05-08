@@ -41,27 +41,29 @@ public class SentenceChooseSyntaxActivity extends BaseActivity {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (type){
-                    case 1://连词成句
-                        Intent intent1 = new Intent(SentenceChooseSyntaxActivity.this, SentencePracticeWordExampleActivity.class);
-                        intent1.putExtra("index", i);
-                        startActivity(intent1);
-                        break;
-                    case 2://句子练习
-                        Intent intent2 = new Intent(SentenceChooseSyntaxActivity.this, SentenceMoreSentenceActivity.class);
-                        intent2.putExtra("index", i);
-                        startActivity(intent2);
-                        break;
-                    case 3://造句练习
-                        Intent intent3 = new Intent(SentenceChooseSyntaxActivity.this, SentenceMakeSentenceActivity.class);
-                        intent3.putExtra("index", i);
-                        startActivity(intent3);
-                        break;
-                    case 4://声调练习
-                        Intent intent4 = new Intent(SentenceChooseSyntaxActivity.this, SentenceToneActivity.class);
-                        intent4.putExtra("index", i);
-                        startActivity(intent4);
-                        break;
+                if (i != adapter.getCount()-1){
+                    switch (type) {
+                        case 1://连词成句
+                            Intent intent1 = new Intent(SentenceChooseSyntaxActivity.this, SentencePracticeWordExampleActivity.class);
+                            intent1.putExtra("index", i);
+                            startActivity(intent1);
+                            break;
+                        case 2://句子练习
+                            Intent intent2 = new Intent(SentenceChooseSyntaxActivity.this, SentenceMoreSentenceActivity.class);
+                            intent2.putExtra("index", i);
+                            startActivity(intent2);
+                            break;
+                        case 3://造句练习
+                            Intent intent3 = new Intent(SentenceChooseSyntaxActivity.this, SentenceMakeSentenceActivity.class);
+                            intent3.putExtra("index", i);
+                            startActivity(intent3);
+                            break;
+                        case 4://声调练习
+                            Intent intent4 = new Intent(SentenceChooseSyntaxActivity.this, SentenceToneActivity.class);
+                            intent4.putExtra("index", i);
+                            startActivity(intent4);
+                            break;
+                    }
                 }
             }
         });

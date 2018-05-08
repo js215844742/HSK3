@@ -138,6 +138,8 @@ public class SentencePracticeWordActivity extends BaseActivity implements View.O
                     translationTv.setText(SentenceQuestionData.RIGHTANSWER_TRANSLATIONS[index][position]);
                     rightAnswerTv.setText(SentenceQuestionData.RIGHTANSWERS[index][position]);
                     answerView.setVisibility(View.GONE);
+                    rightAnswerView.setVisibility(View.GONE);
+                    translationTv.setVisibility(View.GONE);
                     seeAnswerBtn.setVisibility(View.VISIBLE);
                     redoBtn.setVisibility(View.GONE);
                     nextBtn.setVisibility(View.GONE);
@@ -215,8 +217,8 @@ public class SentencePracticeWordActivity extends BaseActivity implements View.O
         boolean result = false;
         String myAnswer = answerEdt.getText().toString().trim();
         myAnswerTv.setText(myAnswer);
+        myAnswerTv.setTextColor(getResources().getColor(R.color.green));
         if (myAnswer.equals(SentenceQuestionData.RIGHTANSWERS[index][position])){
-            myAnswerTv.setTextColor(getResources().getColor(R.color.green));
             result = true;
         }else if (myAnswer.substring(0, myAnswer.length()-1).equals(SentenceQuestionData.RIGHTANSWERS[index][position])){
             result = true;

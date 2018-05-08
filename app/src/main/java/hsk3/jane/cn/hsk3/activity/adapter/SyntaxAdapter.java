@@ -29,9 +29,9 @@ public class SyntaxAdapter extends BaseAdapter{
     @Override
     public int getCount() {
         if (SentenceData.SYNTAX.length<10) {
-            return SentenceData.SYNTAX.length;
+            return SentenceData.SYNTAX.length+1;
         }else{
-            return 10;
+            return 11;
         }
     }
 
@@ -52,14 +52,20 @@ public class SyntaxAdapter extends BaseAdapter{
             view = inflater.inflate(R.layout.item_sentence_syntax, null);
         }
         TextView indexTv = (TextView) ViewHolder.get(view, R.id.tv_index);
-
+        indexTv.setText("句法"+(i+1)+":");
         LinearLayout titleView = (LinearLayout) ViewHolder.get(view, R.id.view_title);
         titleView.removeAllViews();
-        for (int i1 = 0; i1 < item.length; i1++) {
+        if (i == getCount()-1){
+            indexTv.setText("");
             TextView title = new TextView(context);
-            indexTv.setText("句法"+(i+1)+":");
-            title.setText(item[i1]);
+            title.setText("更多句法尽请期待...");
             titleView.addView(title);
+        }else {
+            for (int i1 = 0; i1 < item.length; i1++) {
+                TextView title = new TextView(context);
+                title.setText(item[i1]);
+                titleView.addView(title);
+            }
         }
 
         return view;
